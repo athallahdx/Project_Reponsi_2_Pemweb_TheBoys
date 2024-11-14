@@ -8,6 +8,6 @@
     - NIM: H1D023023
     - Email: 
 
-3. Nama Anggota 3
+3. Arga Aryanta Indrafata
     - NIM: H1D023096
     - Email: 
