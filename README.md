@@ -6,8 +6,8 @@
 
 2. Irfan Romadhon Widodo
     - NIM: H1D023023
-    - Email: 
+    - Email: irfan.widodo@mhs.unsoed.ac.id    
 
 3. Arga Aryanta Indrafata
     - NIM: H1D023096
-    - Email: 
+    - Email: argaaryanta920@gmail.com
