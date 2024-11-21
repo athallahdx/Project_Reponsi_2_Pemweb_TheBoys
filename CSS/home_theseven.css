@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -16,12 +14,12 @@ body {
 /* Bagian header dan judul */
 .header {
   position: relative;
-  width: 100%;          
-  height: 100vh;        
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -32,7 +30,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center; 
+  object-position: center;
   z-index: 1;
 }
 
@@ -62,11 +60,11 @@ body {
   font-size: 1.1rem;
 }
 
-.gabungan{
-  display: flex; 
-  justify-content: space-between; 
-  width: 100%; 
-  margin: 10px 0; 
+.gabungan {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .text1 {
@@ -75,13 +73,13 @@ body {
 }
 
 .text2 {
-  float: left; 
-  width: 45%; 
+  float: left;
+  width: 45%;
 }
 
 .text3 {
-  float: right; 
-  width: 45%; 
+  float: right;
+  width: 45%;
   margin-right: 5%;
 }
 
@@ -111,7 +109,7 @@ body {
 
 .highlight-red {
   color: red;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 
@@ -131,7 +129,7 @@ body {
   text-align: left;
   font-weight: bold;
   font-size: 1.8rem;
-  color:black;
+  color: black;
 }
 
 /* Styling untuk gambar bagian atas */
@@ -147,10 +145,12 @@ body {
   overflow: hidden;
   flex: 1;
   max-width: calc(33.33% - 20px);
-  border: 2px solid #ddd; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk estetika */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Menambahkan bayangan untuk estetika */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Animasi saat hover */
 }
 
 .image-box img {
@@ -160,11 +160,13 @@ body {
 }
 
 .image-box:hover img {
-  transform: scale(1.2); /* Efek zoom pada hover */
+  transform: scale(1.2);
+  /* Efek zoom pada hover */
 }
 
 .image-box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih tebal saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Bayangan lebih tebal saat hover */
 }
 
 .overlay {
@@ -179,7 +181,8 @@ body {
 }
 
 .image-box:hover .overlay {
-  opacity: 1; /* Menampilkan overlay putih saat hover */
+  opacity: 1;
+  /* Menampilkan overlay putih saat hover */
 }
 
 /* Bagian Compound V */
@@ -217,7 +220,7 @@ body {
 }
 
 
-.pisah p{
+.pisah p {
   font-size: 1.2rem;
   margin-top: 5px;
   margin-bottom: 30px;
@@ -225,6 +228,7 @@ body {
   margin-right: 50px;
   text-align: justify;
 }
+
 .vaksin-content {
   display: flex;
   justify-content: space-between;
@@ -245,16 +249,14 @@ body {
 }
 
 .vaksin-image img {
-  float:right;
+  float: right;
   width: 100%;
   max-width: 700px;
   height: auto;
-  margin-left:100px;
+  margin-left: 100px;
   margin-top: -300px;
 }
 
-
-=======
 
 body {
   font-family: Arial, sans-serif;
@@ -267,12 +269,12 @@ body {
 /* Bagian header dan judul */
 .header {
   position: relative;
-  width: 100%;          
-  height: 100vh;        
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -283,7 +285,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center; 
+  object-position: center;
   z-index: 1;
 }
 
@@ -312,11 +314,11 @@ body {
   margin-left: 80px;
 }
 
-.gabungan{
-  display: flex; 
-  justify-content: space-between; 
-  width: 100%; 
-  margin: 10px 0; 
+.gabungan {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .text1 {
@@ -325,13 +327,13 @@ body {
 }
 
 .text2 {
-  float: left; 
-  width: 45%; 
+  float: left;
+  width: 45%;
 }
 
 .text3 {
-  float: right; 
-  width: 45%; 
+  float: right;
+  width: 45%;
   margin-right: 5%;
 }
 
@@ -348,4 +350,3 @@ body {
   margin-right: 50px;
   margin-top: 20px
 }
->>>>>>> f5676da82190aec64a3526f80a1eea87ad23e3c3
