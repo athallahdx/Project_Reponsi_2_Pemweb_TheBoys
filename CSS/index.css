@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    width: 60vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.image-container.left {
+    left: -5vw;
+    top: 0; 
+    z-index: 3; 
+    transform: translateX(0);
+}
+
+.image-container.right {
+    left: 40vw;
+    z-index: 2; 
+    transform: translateX(0);
+}
+
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+
+/* Hover effects for left image */
+.image-container.left:hover {
+    transform: scale(1.02);
+    z-index: 3;
+}
+
+.image-container.left:hover .image-overlay {
+    opacity: 0.15;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+}
+
+/* Hover effects for right image */
+.image-container.right:hover {
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.image-container.right:hover .image-overlay {
+    opacity: 0.15;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+}
+
+/* Active state */
+.image-container:active {
+    transform: scale(0.98);
+}
+
+.image-container:active .image-overlay {
+    opacity: 0.25;
+}
+
+/* Label untuk gambar - The Boys */
+.image-label_1 {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    visibility: visible;
+    width: 450px;  
+    height: auto;   
+}
+
+
+/* Label untuk gambar - The Seven */
+.image-label_2 {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(5%);
+    z-index: 2;
+    visibility: visible;
+    width: 150px;  
+    height: auto;   
+}
+
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .image-label_1, .image-label_2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+/* Which Side Text */
+.which-side {
+    position: absolute;
+    top: 15%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 5; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.7);
+    animation: smokeEffect 5s infinite;
+    line-height: 1.2;  
+}
+
+
