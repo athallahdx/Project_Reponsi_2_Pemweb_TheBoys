@@ -6,58 +6,129 @@ body {
   color: #333;
 }
 
+.highlight-red {
+  color: red;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box; /* Mengatur box-sizing untuk semua elemen */
+}
+
+@keyframes spawnEffectLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); /* Mulai dari kiri */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Posisikan ke tempat semula */
+  }
+}
+
+@keyframes spawnEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spawnEffectRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Mulai di luar layar (kanan) */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Posisi akhir (normal) */
+  }
+}
 
 /* ................................................................................. */
 /* ............................CONTAINER 1.......................................... */
 
 
 /* Bagian header dan judul */
-.header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+.container-1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  gap: 1px; /* Jarak antar bagian dalam container */
+  padding: 0; /* Ruang fleksibel di sekitar kontainer */
+  width: 100%;
 }
 
 .header-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .header-image {
+    height: auto;
+    object-fit: contain; /* Gambar tidak terpotong */
+  }
+}
+
+@media (min-width: 769px) {
+  .header-image {
+    height: 100vh; /* Tinggi layar penuh untuk perangkat besar */
+    object-fit: cover; /* Isi layar dengan proporsi gambar */
+  }
+}
+
+
+
+/* Styling awal untuk .headline */
 .headline {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 4rem;
+  font-size: clamp(1rem, 5vw, 4rem);
   color: #111;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  z-index: 2;
+  margin: 0;
+  padding: 25px 0;
+  opacity: 0; /* Mulai dengan transparan */
+  transform: translateY(50px); /* Mulai dari bawah */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Efek transisi */
 }
+
+/* Animasi spawn saat .headline menjadi visible */
+
+/* Saat kelas .visible ditambahkan, elemen mendapatkan efek spawn */
+.headline.visible {
+  animation: spawnEffect 1s ease-out forwards; /* Menambahkan animasi spawn */
+}
+
 
 
 /* Bagian text dan gambar sebelah */
 
-.content {
+.news {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  align-items: flex-start; /* Menjaga elemen berada di atas */
+  gap: 20px; /* Jarak antar elemen */
+  width: 100%;
+  padding: 0 20px; /* Menambahkan padding untuk elemen di dalamnya */
+  flex-wrap: wrap; /* Membuat elemen bisa mengalir saat ukuran layar kecil */
+  height: auto; /* Agar elemen bisa mengalir saat ukuran layar kecil */
 }
 
-.text-section {
-  display: grid;
-  grid-gap: 10px;
+.text-section1 {
+  flex: 1; /* Membuat bagian teks fleksibel, mengambil ruang yang tersedia */
   text-align: justify;
-  margin-right: 50px;
-  margin-left: 80px;
   font-size: 1.1rem;
+  margin-right: 20px; /* Memberikan jarak antara teks dan gambar */
+  width: 100%; /* Pastikan teks mengambil seluruh lebar kontainer */
+  margin-left: 50px;
 }
 
 .gabungan {
@@ -68,34 +139,88 @@ body {
 }
 
 .text1 {
-  margin-right: 30px;
-
+  margin-right: 0px;
 }
 
-.text2 {
-  float: left;
-  width: 45%;
-}
-
-.text3 {
-  float: right;
-  width: 45%;
-  margin-right: 5%;
+.text2, .text3 {
+  width: 45%; /* Mengatur lebar untuk responsivitas */
 }
 
 .text4 {
-  margin-right: 30px;
+  margin-right: 0px; /* Pastikan .text4 juga menyesuaikan lebar */
 }
 
-.image {
-  grid-column: 2 / 3;
-  grid-row: 1 / 4;
-  justify-self: end;
-  max-width: 100%;
-  height: auto;
-  margin-right: 50px;
-  margin-top: 20px
+.image-1 {
+  width: 45%; /* Menentukan lebar gambar */
+  height: auto; /* Memastikan tinggi otomatis untuk responsivitas */
+  margin-top: 20px; /* Margin atas untuk memberi jarak dari teks */
+  display: flex; /* Menggunakan flex untuk gambar agar responsif */
+  justify-content: center; /* Memastikan gambar berada di tengah */
+  object-fit: cover;
+
+  opacity: 0; /* Mulai dengan transparan */
+  transform: translateY(50px); /* Mulai dari bawah */
 }
+
+/* Menambahkan animasi hanya jika elemen terlihat */
+.image-1.visible {
+  animation: spawnEffect 1s ease-out forwards; /* Menambahkan animasi spawn dari bawah */
+}
+
+
+/* Membuat gambar dan teks responsif */
+@media (max-width: 1024px) {
+  .image-1 {
+    width: 50%; /* Gambar menjadi lebih besar di layar menengah */
+  }
+
+  .text-section1 {
+    font-size: 1rem; /* Mengurangi ukuran teks pada layar menengah */
+    width: 100%; /* Pastikan teks menggunakan 100% lebar */
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    flex-direction: column; /* Menyusun gambar dan teks secara vertikal */
+    align-items: center; /* Memusatkan konten */
+  }
+
+  .image-1 {
+    width: 80%; /* Gambar menjadi lebih besar pada layar kecil */
+    margin-right: 20px;
+  }
+
+  .text-section1 {
+    font-size: 0.9rem; /* Ukuran teks menyesuaikan */
+    width: 100%; /* Membuat teks lebih lebar */
+    text-align: justify; /* Pastikan teks tetap justify */
+    margin-left:0;
+  }
+
+  .text2, .text3 {
+    width: 100%; /* Membuat teks lebih lebar di layar kecil */
+    margin: 0; /* Menghapus margin */
+  }
+
+  .gabungan {
+    flex-direction: column; /* Menyusun teks dalam satu kolom */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-1 {
+    width: 100%; /* Gambar mengisi lebar layar penuh pada layar kecil */
+  }
+
+  .text-section1 {
+    font-size: 0.8rem; /* Ukuran teks semakin kecil */
+    width: 100%; /* Membuat teks mengambil seluruh lebar */
+    text-align: justify; /* Pastikan teks tetap justify */
+  }
+}
+
+
 
 
 
@@ -103,37 +228,55 @@ body {
 /* ............................CONTAINER 2.......................................... */
 
 .container-2 {
-  font-family: Arial, sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px; /* Jarak antar bagian dalam container */
+  padding: 0; /* Ruang fleksibel di sekitar kontainer */
   width: 100%;
 }
 
-.highlight-red {
-  color: red;
-  font-weight: bold;
+.header-2 {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  align-items: flex-start; /* Menjaga elemen di kiri */
+  gap: 10px; /* Jarak antar bagian dalam kontainer */
+  padding: 20px; /* Ruang fleksibel di sekitar kontainer */
+  width: 100%; /* Memastikan kontainer menggunakan lebar penuh */
+
+  opacity: 0; /* Mulai dengan transparan */
+  transform: translateX(-50px); /* Mulai dari kiri */
+}
+
+/* Menambahkan animasi hanya jika elemen terlihat */
+.header-2.visible {
+  animation: spawnEffectLeft 1s ease-out forwards; /* Menambahkan animasi spawn dari kiri */
 }
 
 
 .header-2 h1 {
-  margin-top: 50px;
-  margin-left: 80px;
-  font-size: 3.3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: black;
-  text-align: left;
+  margin-top: 50px; /* Margin atas untuk judul */
+  margin-left: 50px; /* Margin kiri untuk judul */
+  font-size: clamp(0.5rem, 4.5vw, 3.3rem); /* Ukuran font responsif */
+  font-weight: bold; /* Ketebalan font */ /* Mengubah teks menjadi huruf kapital */
+  color: black; /* Warna teks */
+  text-align: left; /* Menyusun teks di kiri */
+  width: auto; /* Memastikan judul tidak terpotong */
 }
 
 .header-2 p {
-  margin-left: 80px;
-  margin-top: -25px;
-  text-align: left;
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: black;
+  margin-left: 50px; /* Margin kiri untuk paragraf */
+  margin-top: -25px; /* Margin atas untuk paragraf */
+  font-size: clamp(10px, 3.3vw, 1.8rem); /* Ukuran font responsif */
+  text-align: left; /* Menyusun teks di kiri */
+  font-weight: bold; /* Ketebalan font */
+  color: black; /* Warna teks */
+  width: auto; /* Memastikan paragraf tidak terpotong */
 }
 
 /* Styling untuk gambar bagian atas */
-.image-container-2 {
+.image-2 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -148,14 +291,14 @@ body {
   border: 2px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Menambahkan bayangan untuk estetika */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Animasi saat hover */
 }
 
 .image-box img {
   width: 100%;
   height: auto;
+  margin-bottom: 1px;
+  border-radius: 8px;
   transition: transform 0.5s ease;
 }
 
@@ -190,163 +333,652 @@ body {
 .vaksin-2 {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.vaksin-2 h2 {
-  margin-top: 60px;
-  font-size: 8rem;
-  font-weight: bold;
-  line-height: 1;
+.vaksin-2 h2, .vaksin-2 h3, .vaksin-2 h4, .pisah p {
   margin-left: 15px;
+  text-align: left;
+}
+
+.vaksin-2 h2 {
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0px; /* Atur margin bawah menjadi 0 agar tidak bertumpuk dengan h3 */
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .vaksin-2 h3 {
-  font-size: 4rem;
-  margin-top: -100px;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  margin-top: -20px; /* Menambahkan sedikit jarak dengan h2 */
   margin-bottom: 10px;
-  margin-left: 22px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .vaksin-2 h4 {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   margin-top: 5px;
   margin-bottom: 30px;
-  margin-left: 28px;
-
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
-
 
 .pisah p {
-  font-size: 1.2rem;
+  font-size: clamp(0.6rem, 2.5vw, 1.1rem); /* Ukuran font lebih kecil daripada h4 pada layar kecil */
   margin-top: 5px;
   margin-bottom: 30px;
-  margin-left: 30px;
   margin-right: 50px;
+  padding: 0 20px;
   text-align: justify;
+  box-sizing: border-box;
+  width: 100%;
 }
 
+/* Flex container for text and image */
 .vaksin-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap; /* Flex wrap to allow wrapping if necessary */
 }
 
+/* Menyiapkan gaya dasar untuk .vaksin-text */
 .vaksin-text {
   flex: 1;
   line-height: 1.6;
   color: #333;
   max-width: 60%;
+  opacity: 0; /* Menyembunyikan elemen awal */
+  transform: translateX(0%); /* Memulai di luar layar (kanan) */
+  transition: opacity 2.5s ease-out, transform 1s ease-out; /* Menambahkan transisi animasi */
 }
+
+/* Kelas 'visible' untuk memulai animasi saat elemen masuk viewport */
+.vaksin-text.visible {
+  opacity: 1;
+  transform: translateX(0); /* Posisi akhir (normal) */
+}
+
 
 .vaksin-image {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
   max-width: 40%;
 }
 
 .vaksin-image img {
-  float: right;
   width: 100%;
-  max-width: 700px;
   height: auto;
-  margin-left: 100px;
-  margin-top: -300px;
+  max-width: 100%;
+  margin-top: 0; /* Adjust margin */
+}
+
+/* Media Query for devices with width less than 768px (Tablet screens) */
+@media (max-width: 768px) {
+  .vaksin-2 h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem); /* Reduced font size for smaller screens */
+    margin-bottom: -20px; /* Reduced margin */
+  }
+
+  .vaksin-2 h3 {
+    font-size: clamp(1.2rem, 4vw, 3rem); /* Reduced font size for smaller screens */
+    margin-top: 10px; /* Adding a little margin to keep separation from h2 */
+    margin-bottom: 10px;
+  }
+
+  .vaksin-2 h4 {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Adjusted font size for mobile */
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .pisah p {
+    font-size: clamp(0.7rem, 3vw, 0.8rem); /* Even smaller text size for mobile */
+    margin-right: 30px; /* Reduced right margin */
+  }
+
+  /* Ensure the text and image stay side by side */
+  .vaksin-content {
+    flex-direction: row; /* Keep side by side */
+    gap: 20px; /* Adjust space for smaller screens */
+  }
+
+  .vaksin-text {
+    max-width: 60%; /* Text keeps its max-width */
+  }
+
+  .vaksin-image {
+    max-width: 40%; /* Image keeps its max-width */
+  }
+}
+
+/* Media Query for devices with width less than 480px (Mobile screens) */
+@media (max-width: 480px) {
+  .vaksin-2 h2 {
+    font-size: clamp(1.2rem, 4vw, 3rem); /* Even smaller font size for very small screens */
+    margin-bottom: -10px; /* Even smaller margin */
+  }
+
+  .vaksin-2 h3 {
+    font-size: clamp(1rem, 3.5vw, 2.5rem); /* Further reduced font size */
+    margin-top: 5px;
+  }
+
+  .vaksin-2 h4 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Adjusted for very small screens */
+  }
+
+  .pisah p {
+    font-size: clamp(0.6rem, 3.5vw, 0.8rem); /* Even smaller text size for very small screens */
+    margin-right: 20px; /* Reduced right margin */
+  }
+
+  /* Ensure the text and image stay side by side */
+  .vaksin-content {
+    flex-direction: row; /* Keep side by side */
+    gap: 10px; /* Adjust space for small screens */
+  }
+
+  .vaksin-text {
+    max-width: 70%; /* Increase the width for text */
+  }
+
+  .vaksin-image {
+    max-width: 30%; /* Make the image smaller */
+  }
 }
 
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+
+
+
+/* ................................................................................. */
+/* ............................CONTAINER 3.......................................... */
+
+/* Styles for container-3 */
+.container-3 {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
 }
 
-/* Bagian header dan judul */
-.header {
-  position: relative;
+.container-3 h2 {
+  font-size: clamp(2rem, 4vw, 3rem); /* Font dinamis sesuai layar */
+  font-weight: bold;
+  color: #000; /* Warna awal */
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-align: left;
+  opacity: 0; /* Mulai transparan */
+  transform: translateX(-50px); /* Mulai bergeser dari kiri */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+ /* Gabungkan animasi spawn dan blink */
+}
+
+.container-3 h2.visible {
+  opacity: 1;
+  transform: translateX(0); /
+}
+
+/* Animasi kelap-kelip untuk h2 */
+@keyframes blink-h2 {
+  0% {
+    color: #000; /* Hitam */
+  }
+  33% {
+    color: #ff0000; /* Merah */
+  }
+  66% {
+    color: #3280a6; /* Biru */
+  }
+  100% {
+    color: #591ba9; /* Kembali ke hitam */
+  }
+}
+
+
+.container-3 h3 {
+  font-size: clamp(1rem, 3vw, 1.8rem); /* Ukuran font responsif */
+  color: #ff0000;
+  margin-bottom: 30px;
+  margin-top: 70px;
+  font-weight: bold;
+  line-height: 1.5; /* Pastikan jarak antar baris tetap nyaman */
+  animation: blink-h2 1.5s infinite;
+}
+
+
+
+
+
+/* Mini games */
+
+
+/* Gunakan tombol yang sama */
+.action-button {
+  padding: 10px 25px; /* Mengurangi padding untuk tombol yang lebih kecil */
+  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Ukuran font yang lebih kecil */
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 12px; /* Menambah kelengkungan tombol */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px; /* Jarak atas yang cukup */
+}
+
+
+.action-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .action-button {
+    padding: 8px 20px; /* Mengurangi padding di layar kecil */
+    font-size: clamp(0.8rem, 4vw, 1rem); /* Ukuran font lebih kecil di layar kecil */
+  }
+}
+
+
+.character-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Gambar dan teks berada di kiri */
+  align-items: center;
+  gap: 20px;
   width: 100%;
-  height: 100vh;
+  opacity: 0; /* Mulai transparan */
+  transform: translateX(-50px); /* Mulai bergeser dari kiri */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+ /* Gabungkan animasi spawn dan blink */
+}
+
+.character-1.visible {
+  opacity: 1;
+  transform: translateX(0); /
+}
+
+.character-1 img {
+  flex-shrink: 0;
+  width: clamp(150px, 200px, 300px); /* Tetap responsif */
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-text-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start; /* Teks dan tombol di kiri */
+  text-align: left;
+  max-width: 600px;
+}
+
+.character-text-1 p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .character-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .character-1 img {
+    margin: 0 auto;
+  }
+
+  .character-text-1 {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Responsif untuk layar sangat besar */
+@media (min-width: 1200px) {
+  .character-1 {
+    justify-content: flex-start; /* Tetap di kiri */
+    gap: 40px;
+  }
+
+  .character-1 img {
+    width: 450px; /* Ukuran gambar tetap besar */
+  }
+
+  .character-text-1 p {
+    font-size: 1.8rem; /* Teks besar */
+  }
+}
+
+
+
+.character-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-}
-
-.header-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  gap: 20px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
+  padding-left: 500px;
+  opacity: 0; /* Mulai transparan */
+  transform: translateX(-50px); /* Mulai bergeser dari kiri */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+ /* Gabungkan animasi spawn dan blink */
 }
 
-.headline {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 4rem;
-  color: #111;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+.character-2.visible {
+  opacity: 1;
+  transform: translateX(0); /
 }
 
 
-/* Bagian text dan gambar sebelah */
+.character-2 img {
+  flex-shrink: 0;
+  width: clamp(150px, 200px, 300px); /* Tetap responsif */
+  height: auto;
+  border-radius: 8px;
+}
 
-.content {
+.character-text-2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Teks dan tombol di kiri */
+  text-align: left;
+  max-width: 600px;
 }
 
-.text-section {
-  display: grid;
-  grid-gap: 10px;
-  text-align: justify;
-  margin-right: 50px;
-  margin-left: 80px;
+.character-text-2 p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
 }
 
-.gabungan {
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .character-2 {
+    flex-direction: column; /* Susunan berubah menjadi kolom */
+    text-align: center; /* Pusatkan teks */
+    padding-left: 0; /* Hilangkan padding kiri */
+    justify-content: center; /* Elemen tetap di tengah */
+    align-items: center;
+  }
+
+  .character-2 img {
+    margin: 0 auto; /* Gambar berada di tengah */
+  }
+
+  .character-text-2 {
+    text-align: center; /* Teks berada di tengah */
+    align-items: center;
+  }
+}
+
+/* Responsif untuk layar sangat besar */
+@media (min-width: 1200px) {
+  .character-2 {
+    justify-content: flex-start; /* Tetap di kiri */
+    gap: 40px;
+  }
+
+  .character-2 img {
+    width: 500px; /* Ukuran gambar tetap besar */
+  }
+
+  .character-text-2 p {
+    font-size: 1.8rem; /* Teks besar */
+  }
+}
+
+
+.character-3 {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-start; /* Gambar dan teks berada di kiri */
+  align-items: center;
+  gap: 20px;
   width: 100%;
-  margin: 10px 0;
+  opacity: 0; /* Mulai transparan */
+  transform: translateX(-50px); /* Mulai bergeser dari kiri */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Gabungkan animasi spawn dan blink */
 }
 
-.text1 {
-  margin-right: 30px;
-
+.character-3.visible {
+  opacity: 1;
+  transform: translateX(0); /* Posisi akhir gambar */
 }
 
-.text2 {
-  float: left;
-  width: 45%;
-}
-
-.text3 {
-  float: right;
-  width: 45%;
-  margin-right: 5%;
-}
-
-.text4 {
-  margin-right: 30px;
-}
-
-.image {
-  grid-column: 2 / 3;
-  grid-row: 1 / 4;
-  justify-self: end;
-  max-width: 100%;
+.character-3 img {
+  flex-shrink: 0;
+  width: clamp(150px, 200px, 300px); /* Tetap responsif */
   height: auto;
-  margin-right: 50px;
-  margin-top: 20px
+  border-radius: 8px;
+}
+
+.character-text-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Teks dan tombol di kiri */
+  text-align: left;
+  max-width: 600px;
+}
+
+.character-text-3 p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .character-3 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .character-3 img {
+    margin: 0 auto;
+  }
+
+  .character-text-3 {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Responsif untuk layar sangat besar */
+@media (min-width: 1200px) {
+  .character-3 {
+    justify-content: flex-start; /* Tetap di kiri */
+    gap: 40px;
+  }
+
+  .character-3 img {
+    width: 380px; /* Ukuran gambar tetap besar */
+  }
+
+  .character-text-3 p {
+    font-size: 1.8rem; /* Teks besar */
+  }
+}
+
+
+.character-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding-left: 500px; /* Menambahkan padding kiri untuk penataan */
+  opacity: 0; /* Mulai transparan */
+  transform: translateX(-50px); /* Mulai bergeser dari kiri */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Gabungkan animasi spawn dan blink */
+}
+
+.character-4.visible {
+  opacity: 1;
+  transform: translateX(0); /* Posisi akhir gambar */
+}
+
+.character-4 img {
+  flex-shrink: 0;
+  width: clamp(150px, 200px, 300px); /* Tetap responsif */
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-text-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Teks dan tombol di kiri */
+  text-align: left;
+  max-width: 600px;
+}
+
+.character-text-4 p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .character-4 {
+    flex-direction: column; /* Susunan berubah menjadi kolom */
+    text-align: center; /* Pusatkan teks */
+    padding-left: 0; /* Hilangkan padding kiri */
+    justify-content: center; /* Elemen tetap di tengah */
+    align-items: center;
+  }
+
+  .character-4 img {
+    margin: 0 auto; /* Gambar berada di tengah */
+  }
+
+  .character-text-4 {
+    text-align: center; /* Teks berada di tengah */
+    align-items: center;
+  }
+}
+
+/* Responsif untuk layar sangat besar */
+@media (min-width: 1200px) {
+  .character-4 {
+    justify-content: flex-start; /* Tetap di kiri */
+    gap: 40px;
+  }
+
+  .character-4 img {
+    width: 420px; /* Ukuran gambar tetap besar */
+  }
+
+  .character-text-4 p {
+    font-size: 1.8rem; /* Teks besar */
+  }
+}
+
+
+
+.character-5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Menempatkan elemen di tengah */
+  align-items: center;
+  gap: 40px; /* Jarak lebih besar antara gambar dan teks */
+  width: 100%;
+  opacity: 0; /* Mulai dengan transparan */
+  transform: translateY(50px); /* Mulai dari bawah */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Efek transisi */
+}
+
+
+/* Saat kelas .visible ditambahkan, elemen mendapatkan efek spawn */
+.character-5.visible {
+  animation: spawnEffect 2s ease-out forwards; /* Menambahkan animasi spawn */
+}
+
+.character-5 img {
+  flex-shrink: 0;
+  width: clamp(150px, 200px, 300px); /* Tetap responsif */
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-text-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Menempatkan teks dan tombol di tengah */
+  text-align: center;
+  max-width: 600px;
+}
+
+.character-text-5 p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .character-5 {
+    flex-direction: column;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .character-5 img {
+    margin: 0 auto;
+  }
+
+  .character-text-5 {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Responsif untuk layar sangat besar */
+@media (min-width: 1200px) {
+  .character-5 {
+    justify-content: center; /* Tetap di tengah */
+    gap: 50px; /* Jarak lebih besar di layar besar */
+    margin-left: -100px;
+  }
+
+  .character-5 img {
+    width: 600px; /* Ukuran gambar tetap besar */
+  }
+
+  .character-text-5 p {
+    font-size: 1.8rem; /* Teks besar */
+  }
 }
