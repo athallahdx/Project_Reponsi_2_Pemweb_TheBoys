@@ -235,7 +235,7 @@ body {
     }
 
     .content-text .vought-logo {
-        width: 150px;
+        width: 100px;
     }
 
     .content-text h1 {
@@ -272,7 +272,7 @@ body {
 .container-2 {
     position: relative;
     width: 100%;
-    height: 100vh; /* Tinggi penuh layar */
+    height: 600vh; /* Tinggi penuh layar */
     background-color: #29324B; /* Warna dasar */
     overflow: hidden;
     z-index: -1; /* Menjadikan elemen ini sebagai indeks paling dasar */
@@ -282,13 +282,13 @@ body {
 .container-2::before {
     content: '';
     position: absolute;
-    width: 40vw; /* Ukuran lingkaran responsif berdasarkan lebar layar */
-    height: 40vw;
+    width: 60vw; /* Ukuran lingkaran responsif berdasarkan lebar layar */
+    height: 60vw;
     background: radial-gradient(circle, #84D4FF, transparent 70%);
     border-radius: 50%;
-    top: 15vw; /* Posisi responsif berdasarkan lebar layar */
-    left: -15vw;
-    filter: blur(8vw); /* Blur responsif */
+    top: 60vw; /* Posisi responsif berdasarkan lebar layar */
+    left: -20vw;
+    filter: blur(15vw); /* Blur responsif */
     animation: glowEffect 8s infinite alternate ease-in-out;
     z-index: -1; /* Tetap berada di lapisan dasar */
 }
@@ -297,13 +297,13 @@ body {
 .container-2::after {
     content: '';
     position: absolute;
-    width: 40vw; /* Ukuran lingkaran responsif */
-    height: 40vw;
+    width: 60vw; /* Ukuran lingkaran responsif */
+    height: 60vw;
     background: radial-gradient(circle, #FF84D4, transparent 70%);
     border-radius: 50%;
-    bottom: -15vw;
-    right: -15vw;
-    filter: blur(8vw); /* Blur responsif */
+    top: 140vw;
+    right: -20vw;
+    filter: blur(15vw); /* Blur responsif */
     animation: glowEffect 8s infinite alternate ease-in-out;
     z-index: -1; /* Tetap berada di lapisan dasar */
 }
@@ -326,10 +326,10 @@ body {
 .vought-logo-2 { 
     display: block; /* Supaya elemen diperlakukan seperti blok */
     margin: 0 auto; /* Berada di tengah secara horizontal */
-    width: clamp(50px, 9vw, 150px); /* Ukuran fleksibel (min 50px, max 150px) */
+    width: clamp(50px, 10vw, 150px); /* Ukuran fleksibel (min 50px, max 150px) */
     height: auto; /* Menjaga proporsi logo */
     position: absolute; /* Untuk memposisikan secara bebas */
-    top: 20%; /* Posisi vertikal tetap konsisten */
+    top: 2%; /* Posisi vertikal tetap konsisten */
     left: 50%; /* Posisi horizontal tetap konsisten */
     transform: translate(-50%, -50%); /* Koreksi agar tetap terlihat di top-left */
     opacity: 0; /* Tidak terlihat awalnya */
@@ -345,7 +345,7 @@ body {
 @media (max-width: 768px) {
     .vought-logo-2 {
         width: clamp(40px, 8vw, 120px); /* Lebih kecil untuk layar kecil */
-        top: 10%; /* Posisi vertikal tetap konsisten */
+        top: 1%; /* Posisi vertikal tetap konsisten */
         left: 50%;
     }
 }
@@ -353,9 +353,78 @@ body {
 @media (max-width: 480px) {
     .vought-logo-2 {
         width: clamp(30px, 8vw, 100px); /* Ukuran paling kecil */
-        top: 5%; /* Posisi vertikal tetap konsisten */
+        top: 1%; /* Posisi vertikal tetap konsisten */
         left: 50%;
     }
 }
 
 
+
+.background-image-2 {
+    position: absolute;
+    top: 20%;            /* Letakkan gambar lebih dekat ke atas */
+    left: 50%;           /* Pusatkan secara horizontal */
+    width: clamp(150px, 90vw, 800px); /* Ukuran fleksibel lebih besar (min 150px, max 300px) */
+    height: auto;        /* Menjaga proporsi gambar */
+    transform: translate(-50%, 0); /* Menghapus efek tengah vertikal */
+    object-fit: contain; /* Pastikan gambar ditampilkan secara proporsional */
+    z-index: 0;          /* Tetap berada di bawah konten */
+}
+
+.content-wrapper-2 {
+    position: relative;
+    z-index: 1;          /* Pastikan konten berada di atas gambar */
+    text-align: center;  /* Teks rata tengah */
+    padding: 20px;
+    max-width: 600px;    /* Batas maksimal lebar konten */
+    margin: 0 auto;      /* Pastikan konten di tengah secara horizontal */
+}
+
+
+
+.family-image-2{
+    width: clamp(100px, 70vw, 300px); /* Ukuran responsif */
+    top: 100%; 
+    margin-bottom: 20px;
+    border-radius: 10px; /* Opsional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    
+    
+}
+
+.content-text-2 h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Ukuran fleksibel untuk heading */
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.content-text-2 p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ukuran fleksibel untuk paragraf */
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .content-wrapper-2 {
+        padding: 10px;
+    }
+
+    .family-image-2 {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-text-2 h1 {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    .content-text-2 p {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+}
