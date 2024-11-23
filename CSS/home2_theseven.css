@@ -162,6 +162,8 @@ body {
     width: 100%;
     object-fit: cover;
     height: auto;
+    padding: 0;
+    margin: 0;
 }
 
 /* Styling untuk konten teks */
@@ -266,3 +268,57 @@ body {
 
 /* ................................................................................. */
 /* ............................Container2.......................................... */
+/* Container utama */
+.container-2 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Tinggi penuh layar */
+    background-color: #29324B; /* Warna dasar */
+    overflow: hidden;
+    z-index: -1; /* Menjadikan elemen ini sebagai indeks paling dasar */
+}
+
+/* Efek lingkaran gradasi biru di kiri atas */
+.container-2::before {
+    content: '';
+    position: absolute;
+    width: 40vw; /* Ukuran lingkaran responsif berdasarkan lebar layar */
+    height: 100vw;
+    background: radial-gradient(circle, #84D4FF, transparent 70%);
+    border-radius: 50%;
+    top: -15vw; /* Posisi responsif berdasarkan lebar layar */
+    left: -15vw;
+    filter: blur(8vw); /* Blur responsif */
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; /* Tetap berada di lapisan dasar */
+}
+
+/* Efek lingkaran gradasi ungu di kanan bawah */
+.container-2::after {
+    content: '';
+    position: absolute;
+    width: 40vw; /* Ukuran lingkaran responsif */
+    height: 40vw;
+    background: radial-gradient(circle, #FF84D4, transparent 70%);
+    border-radius: 50%;
+    bottom: -15vw;
+    right: -15vw;
+    filter: blur(8vw); /* Blur responsif */
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; /* Tetap berada di lapisan dasar */
+}
+
+/* Animasi efek glowing */
+@keyframes glowEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
