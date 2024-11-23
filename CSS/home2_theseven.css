@@ -147,10 +147,122 @@ body {
     }
 }
 
-/* Styling untuk gambar header */
-.container-1 .header-image {
-    margin-top: 60px; /* Memberikan jarak di atas gambar untuk menghindari tumpang tindih dengan navbar */
-    width: 100%; /* Menyesuaikan lebar gambar agar responsif */
-    object-fit: cover; /* Menjamin gambar menutupi area */
-    height: auto; /* Menyesuaikan tinggi gambar agar responsif */
+
+
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+/* Styling untuk container dan gambar header yang sudah ada */
+.container-1 {
+    position: relative;
 }
+
+.container-1 .header-image {
+    margin-top: 10vh; /* Menggunakan vh untuk margin yang lebih fleksibel */
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+/* Styling untuk konten teks */
+.content-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100%;
+    padding: 0 5%;
+    max-width: 600px;
+    animation: slideInText 1s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Styling untuk logo Vought */
+.content-text .vought-logo {
+    width: 250px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+/* Styling untuk teks */
+.content-text h1 {
+    color: white;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.2s;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.content-text p {
+    color: white;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.4s;
+}
+
+/* Animations */
+@keyframes slideInText {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .content-text {
+        padding: 0 5%; /* Sesuaikan padding agar lebih proporsional */
+    }
+
+    .content-text .vought-logo {
+        width: 150px;
+    }
+
+    .content-text h1 {
+        font-size: 1rem; /* Menyesuaikan font-size di perangkat lebih kecil */
+        padding: 0px;
+    }
+
+    .content-text p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-text .vought-logo {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+
+    .content-text h1 {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .content-text p {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+/* ................................................................................. */
+/* ............................Container2.......................................... */
