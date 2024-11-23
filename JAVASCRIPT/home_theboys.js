@@ -5,13 +5,12 @@ function setupObserver(selector) {
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Menambahkan kelas 'visible' untuk memulai animasi
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Menghentikan observasi setelah animasi dimulai
+            observer.unobserve(entry.target); 
           }
         });
       }, {
-        threshold: 0.5 // Ketika 50% elemen terlihat di layar
+        threshold: 0.5 
       });
       observer.observe(element);
     }
