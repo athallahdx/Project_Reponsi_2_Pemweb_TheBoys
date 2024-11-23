@@ -49,11 +49,11 @@ function setupObserver(selector) {
   }
   
   // Panggil fungsi toggleImage untuk setiap button dan image
-  toggleImage("change-image-button", "character-image", "../ASSET/theseven_blacknoir2.png", "../ASSET/theseven_blacknoir2.png");
-  toggleImage("change-image-button-2", "character-image-2", "../ASSET/theseven_atrain2.png", "../ASSET/theseven_atrain2.png");
-  toggleImage("change-image-button-3", "character-image-3", "../ASSET/theseven_stormfront2.png", "../ASSET/theseven_stormfront2.png");
-  toggleImage("change-image-button-4", "character-image-4", "../ASSET/theseven_thedeep2.png", "../ASSET/theseven_thedeep2.png");
-  toggleImage("change-image-button-5", "character-image-5", "../ASSET/theseven_homelander2.png", "../ASSET/theseven_homelander2.png");
+  toggleImage("change-image-button", "character-image", "../ASSET/THEBOYS/theseven_blacknoir2.png", "../ASSET/THEBOYS/theseven_blacknoir2.png");
+  toggleImage("change-image-button-2", "character-image-2", "../ASSET/THEBOYS/theseven_atrain2.png", "../ASSET/THEBOYS/theseven_atrain2.png");
+  toggleImage("change-image-button-3", "character-image-3", "../ASSET/THEBOYS/theseven_stormfront2.png", "../ASSET/THEBOYS/theseven_stormfront2.png");
+  toggleImage("change-image-button-4", "character-image-4", "../ASSET/THEBOYS/theseven_thedeep2.png", "../ASSET/THEBOYS/theseven_thedeep2.png");
+  toggleImage("change-image-button-5", "character-image-5", "../ASSET/THEBOYS/theseven_homelander2.png", "../ASSET/THEBOYS/theseven_homelander2.png");
   
 
 
