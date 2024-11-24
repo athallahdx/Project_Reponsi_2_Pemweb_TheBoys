@@ -101,6 +101,6 @@ setupObserver('.circle-2'); // Tambahkan observer untuk lingkaran 2
 setupObserver('.circle-3'); // Tambahkan observer untuk lingkaran 3
 setupObserver('.seven-image');
 setupObserver('.anggota-image');
-
+setupObserver('.seven-text-end h1');
 
 

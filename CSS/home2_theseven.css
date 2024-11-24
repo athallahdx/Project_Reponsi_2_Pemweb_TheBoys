@@ -658,7 +658,7 @@ body {
 .container-3 {
     position: relative;
     width: 100%;
-    height: 500vh; /* Tinggi penuh layar */
+    height: 300vh; /* Tinggi penuh layar */
     background-color: #29324B; /* Warna dasar */
     overflow: hidden;
     z-index: -1; /* Menjadikan elemen ini sebagai indeks paling dasar */
@@ -885,6 +885,21 @@ body {
 }
 
 .anggota-image.visible {
+    animation: spawnFromBottom 1s ease-out forwards; /* Terapkan animasi dari bawah */
+    opacity: 1; /* Menjadikan elemen terlihat */
+}
+
+.seven-text-end h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e3dddd;
+    text-align: center;
+    margin-top: -100px;
+    opacity: 0; /* Mulai tidak terlihat */
+    transition: opacity 1s ease-out; /* Transisi ketika kelas "visible" ditambahkan */
+}
+
+.seven-text-end h1.visible {
     animation: spawnFromBottom 1s ease-out forwards; /* Terapkan animasi dari bawah */
     opacity: 1; /* Menjadikan elemen terlihat */
 }
