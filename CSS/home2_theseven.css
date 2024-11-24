@@ -861,7 +861,7 @@ body {
 
 /* Efek untuk .seven-image */
 .seven-image {
-    margin-top: 22rem;
+    margin-top: 26rem;
     width: 1000px;
     z-index: 0;
     opacity: 0; /* Mulai tidak terlihat */
@@ -870,7 +870,7 @@ body {
 
 /* Efek untuk .anggota-image */
 .anggota-image {
-    margin-top: 85rem;
+    margin-top: 95rem;
     align-items: center;
     width: 1300px;
     z-index: 1;
@@ -894,7 +894,7 @@ body {
     font-weight: bold;
     color: #e3dddd;
     text-align: center;
-    margin-top: -100px;
+    margin-top: 50px;
     opacity: 0; /* Mulai tidak terlihat */
     transition: opacity 1s ease-out; /* Transisi ketika kelas "visible" ditambahkan */
 }
@@ -902,4 +902,116 @@ body {
 .seven-text-end h1.visible {
     animation: spawnFromBottom 1s ease-out forwards; /* Terapkan animasi dari bawah */
     opacity: 1; /* Menjadikan elemen terlihat */
+}
+
+
+
+
+/* ................................................................................. */
+/* ............................Container4.......................................... */
+
+.container-4 {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #29324B;/* Warna latar belakang */
+    font-weight: bold;
+}
+
+.invitation-card-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1E2741;
+    border-radius: 20px;
+    padding: 40px 20px;
+    width: 650px;
+    text-align: center;
+    color: white;
+    position: relative;
+    /* External shadow */
+    box-shadow: 
+        0 4px 60px 0 rgba(0, 0, 0, 0.4);
+    opacity: 0; /* Mulai tidak terlihat */
+    transition: opacity 1s ease-out; /* Transisi ketika kelas "visible" ditambahkan */
+    }
+    
+.invitation-card-4.visible {
+        animation: spawnFromBottom 1s ease-out forwards; /* Terapkan animasi dari bawah */
+        opacity: 1; /* Menjadikan elemen terlihat */
+    }
+
+/* Efek inner light dan shadow */
+.invitation-card-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px; /* Ketebalan border */
+    background: linear-gradient(140deg, 
+        rgba(255, 255, 255, 0.2),  /* Top-left: white */
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(0, 0, 0, 0.1) 75%,
+        rgba(0, 0, 0, 0.2)         /* Bottom-right: dark */
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 8px 9px) content-box, 
+        linear-gradient(#fff 8px 9px);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Optional: untuk membuat efek lebih halus */
+.invitation-card-4::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 21px;
+    padding: 1px;
+    background: linear-gradient(140deg,
+        rgba(255, 255, 255, 0.1),  /* Subtle outer glow top-left */
+        rgba(0, 0, 0, 0.1)         /* Subtle outer shadow bottom-right */
+    );
+    pointer-events: none;
+}
+
+.logo-section-4 .logo-4 {
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+
+.text-section-4 h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-section-4 p {
+    font-size: 1.4rem;
+    margin: 5px 0 15px;
+    color: #dcdcdc;
+    margin-bottom: 30px;
+}
+
+.enroll-button-4 {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #0b162a;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enroll-button-4:hover {
+    background-color: #dcdcdc;
 }
