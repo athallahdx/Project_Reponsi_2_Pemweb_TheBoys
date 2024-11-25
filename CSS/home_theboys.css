@@ -999,7 +999,7 @@ body {
 .header-4 p {
   font-size: 30px;
   font-weight: bold;
-  color: #ff0000; /* Warna merah terang */
+  color: red; /* Warna merah terang */
   margin-bottom: 60px;
 }
 
