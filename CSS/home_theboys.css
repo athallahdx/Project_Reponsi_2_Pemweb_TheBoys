@@ -8,10 +8,9 @@ body {
 
 body {
   background-image: url('../ASSET/THEBOYS/home_background.png');
-  background-size: cover; /* Menyesuaikan ukuran gambar dengan layar */
-  background-position: center; /* Menempatkan gambar di tengah */
-  background-repeat: no-repeat; /* Menghindari pengulangan gambar */
-  /* Membuat gambar tetap di tempat saat di-scroll */
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 
