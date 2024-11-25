@@ -27,6 +27,7 @@ function setupObserver(selector) {
   setupObserver('.character-3');
   setupObserver('.character-4');
   setupObserver('.character-5');
+  setupObserver('.theboys-card-4');
 
 
 
