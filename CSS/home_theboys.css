@@ -999,13 +999,13 @@ body {
 .header-4 p {
   font-size: 30px;
   font-weight: bold;
-  color: red; /* Warna merah terang */
+  color: red; 
   margin-bottom: 60px;
 }
 
 .theboys-card-4 {
   margin: 20px auto;
-  background-color: #FFAA00; /* Warna oranye terang */
+  background-color: #FFAA00; 
   border-radius: 15px;
   width: 480px;
   height: 250px;
@@ -1043,12 +1043,12 @@ body {
 .profile-picture-4 {
   width: 100px;
   height: 130px;
-  background-color: #D9D9D9; /* Warna putih */
-  border: 1px solid #cccccc; /* Border abu-abu terang untuk pemisah */
+  background-color: #D9D9D9; 
+  border: 1px solid #cccccc; 
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Memberikan sedikit efek bayangan */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 
