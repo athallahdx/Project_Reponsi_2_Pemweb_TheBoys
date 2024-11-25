@@ -3,8 +3,17 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  color: #333;
+  color: #ffffff;
 }
+
+body {
+  background-image: url('../ASSET/THEBOYS/home_background.png');
+  background-size: cover; /* Menyesuaikan ukuran gambar dengan layar */
+  background-position: center; /* Menempatkan gambar di tengah */
+  background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+  /* Membuat gambar tetap di tempat saat di-scroll */
+}
+
 
 .highlight-red {
   color: red;
@@ -90,7 +99,7 @@ body {
 .headline {
   font-family: 'Times New Roman', Times, serif;
   font-size: clamp(1rem, 5vw, 4rem);
-  color: #111;
+  color: #ffffff;
   text-align: center;
   z-index: 2;
   margin: 0;
@@ -255,7 +264,7 @@ body {
   margin-left: 50px; 
   font-size: clamp(0.5rem, 4.5vw, 3.3rem); 
   font-weight: bold; 
-  color: black; 
+  color: #ffffff; 
   text-align: left;
   width: auto; 
 }
@@ -266,7 +275,7 @@ body {
   font-size: clamp(10px, 3.3vw, 1.8rem); 
   text-align: left; 
   font-weight: bold; 
-  color: black; 
+  color: #ffffff; 
   width: auto; 
 }
 
@@ -391,7 +400,7 @@ body {
 .vaksin-text {
   flex: 1;
   line-height: 1.6;
-  color: #333;
+  color: #ffffff;
   max-width: 60%;
   opacity: 0; 
   transform: translateX(0%); 
@@ -510,7 +519,7 @@ body {
 .container-3 h2 {
   font-size: clamp(2rem, 4vw, 3rem); 
   font-weight: bold;
-  color: #000; 
+  color: #ffffff; 
   margin-bottom: 10px;
   margin-left: 20px;
   text-align: left;
