@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background-image: url('../ASSET/THEBOYS/home_background.png');
+  background-image: url('../../ASSET/THEBOYS/home_background.png');
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat; 
@@ -1026,11 +1026,11 @@ body {
 
 
 .theboys-logo-4 {
-  display: block; /* Ensures the image is treated as a block element */
-  margin-left: auto; /* Centers the image horizontally */
-  margin-right: auto; /* Centers the image horizontally */
-  width: 150px; /* Adjust the width to make it smaller, you can change this value */
-  height: auto; /* Keeps the aspect ratio intact */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 150px; 
+  height: auto; 
   margin-top: 10px;
 }
 
@@ -1060,33 +1060,33 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: #9B0000; /* Contrasting color, similar to red */
-  color: white; /* Text color */
+  background-color: #9B0000; 
+  color: white; 
   font-weight: bold;
   font-size: 1.4rem;
   padding: 20px 60px;
   width: 300px;
   height: 65px;
   border: none;
-  border-radius: 15px; /* Rounded corners for a modern look */
+  border-radius: 15px; 
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
-  text-decoration: none; /* Ensures no underline */
+  transition: all 0.3s ease; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+  text-decoration: none; 
   display: block;
-  margin: 0 auto; /* Centers the button horizontally */
+  margin: 0 auto; 
 }
 
 .enroll-button-4:hover {
   color: #9B0000;
-  background-color: #fff; /* Darker shade on hover */
-  transform: translateY(-5px); /* Button moves up on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  background-color: #fff;
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .enroll-button-4:active {
-  transform: translateY(2px); /* Button presses down slightly on click */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on active state */
+  transform: translateY(2px); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
 }
 
 
