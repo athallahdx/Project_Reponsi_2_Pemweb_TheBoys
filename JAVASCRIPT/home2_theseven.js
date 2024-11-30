@@ -105,3 +105,13 @@ setupObserver('.seven-text-end h1');
 setupObserver('.invitation-card-4');
 
 
+
+
+// Button Enroll
+const enrollButton = document.querySelector('.enroll-button-4');
+
+// Tambahkan event listener pada tombol
+enrollButton.addEventListener('click', function () {
+    // Arahkan ke halaman login2_theseven.html
+    window.location.href = 'login2_theseven.html';
+});

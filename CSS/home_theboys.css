@@ -1001,58 +1001,95 @@ body {
   font-weight: bold;
   color: red; 
   margin-bottom: 60px;
+  font-weight: bold;
 }
 
 .theboys-card-4 {
   margin: 20px auto;
-  background-color: #FFAA00; 
+  background: linear-gradient(145deg, #FF8438, #FFDE38);
   border-radius: 15px;
-  width: 480px;
-  height: 250px;
+  width: 650px;
+  height: 300px;
   padding: 20px;
   color: #ffffff;
   text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 0, 0, 0.6); 
   opacity: 0; 
   transform: translateY(50px); 
   transition: opacity 1s ease-out, transform 1s ease-out; 
 }
 
 
-
 .theboys-card-4.visible {
   animation: spawnEffect 2s ease-out forwards; 
 }
 
+
+.theboys-logo-4 {
+  display: block; /* Ensures the image is treated as a block element */
+  margin-left: auto; /* Centers the image horizontally */
+  margin-right: auto; /* Centers the image horizontally */
+  width: 150px; /* Adjust the width to make it smaller, you can change this value */
+  height: auto; /* Keeps the aspect ratio intact */
+  margin-top: 10px;
+}
+
+
 .theboys-card-4 h3 {
+  font-size: 2rem;
+  color: #641313;
+  margin-bottom: 5px;
+  margin-top: 12px;
+  font-weight: bold;
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 5px;
+
 }
 
-.card-content-4 {
-  margin-left: 15px;
-  margin-bottom: 20px;
+.theboys-card-4 p {
+  font-size: 1.8rem;
+  color: #641313;
+  margin-bottom: 30px;
+  margin-top: 12px;
   font-weight: bold;
-  display: flex;
-  gap: 15px;
+  text-align: center;
+}
+
+/* Button Style */
+.enroll-button-4 {
+  text-align: center;
   align-items: center;
-}
-
-.profile-picture-4 {
-  width: 100px;
-  height: 130px;
-  background-color: #D9D9D9; 
-  border: 1px solid #cccccc; 
-  display: flex;
   justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+
+  background-color: #9B0000; /* Contrasting color, similar to red */
+  color: white; /* Text color */
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 20px 60px;
+  width: 300px;
+  height: 65px;
+  border: none;
+  border-radius: 15px; /* Rounded corners for a modern look */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+  text-decoration: none; /* Ensures no underline */
+  display: block;
+  margin: 0 auto; /* Centers the button horizontally */
+}
+
+.enroll-button-4:hover {
+  color: #9B0000;
+  background-color: #fff; /* Darker shade on hover */
+  transform: translateY(-5px); /* Button moves up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.enroll-button-4:active {
+  transform: translateY(2px); /* Button presses down slightly on click */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on active state */
 }
 
 
-.profile-details-4 p {
-  
-  font-size: 15px;
-}
+
+
+

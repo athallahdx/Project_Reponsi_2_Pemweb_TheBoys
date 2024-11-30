@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #29324B;
+    margin: 0;
+    padding: 0;
+}
+
+/* ................................................................................. */
+/* ............................Navbar styling.......................................... */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #5e6477 , #f2f4f8); 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px; 
+    height: 60px; 
+    animation: slideDown 1s forwards;
+}
+
+
+.logo-container .logo {
+    height: 30px;
+    object-fit: contain;
+}
+
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideInText {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.hamburger {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+    color: #1c1616;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin-left: 25rem; 
+    margin-right: auto; 
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem); 
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #555;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.profile-pic {
+    background-color: #D9D9D9;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); 
+}
+
+.nickname {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+        margin-left: 0;
+        justify-content: flex-start;
+        background: linear-gradient(to bottom, #142c5c,#f2f4f8);
+        position: fixed; 
+        top: 0; 
+        left: -50%; 
+        width: 50%; 
+        height: 100vh; 
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: left 0.3s ease; 
+        z-index: 999; 
+    }
+
+    .navbar {
+        padding: 5px 15px; 
+    }
+
+    .logo-container .logo {
+        height: 25px; 
+    }
+
+    .profile-container {
+        margin-right: 0;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001; 
+    }
+
+    .nav-links.show {
+        left: 0;
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+    }
+}
+
+
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b162a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    overflow: hidden;
+}
+
+.container-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+@keyframes spawnFromBottom {
+    0% {
+        transform: translateY(100px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+.registration-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #192841;
+    border-radius: 20px;
+    width: 800px; 
+    height: 410px; 
+    padding-left: 290px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+    animation: spawnFromBottom 1s ease-out; 
+}
+
+
+/* Kotakan gradasi di belakang */
+.gradient-box {
+    position: absolute; 
+    margin-left: 60px;
+    margin-top: 70px;
+    margin-bottom: 90px;   
+    left: 0;
+    width: 180px;
+    height: 310px;
+    background: linear-gradient(-145deg, #00B8DD, #7525E6, #FF84D1);
+    background-size: 200% 200%; 
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    z-index: 3;
+    animation: move-gradient 2s infinite linear;
+}
+
+@keyframes move-gradient {
+    0% {
+        background-position: 0% 50%; 
+    }
+    50% {
+        background-position: 100% 50%; 
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo-image {
+    position: absolute;
+    top: 20px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 80px;
+    z-index: 3; 
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(-50%) scale(0.8); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(-50%) scale(1); 
+        opacity: 1; 
+    }
+}
+
+.hero-image {
+    position: absolute;
+    bottom: -7px;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 280px;
+    z-index: 10; 
+}
+
+
+/* Konten Form */
+.registration-content {
+    position: relative;
+    flex: 1; 
+    padding: 0px 80px;
+    margin-left: -70px;
+    margin-top: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; 
+}
+
+.registration-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 760;
+}
+
+.registration-content h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 760;
+}
+
+.registration-content hr {
+    margin-top: 5px;
+    margin-bottom: 13px;
+    border: none;
+    height: 3px;
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+/* Form Input */
+/* Kontainer Label dan Input */
+.input-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    margin-left: 0; 
+}
+
+/* Label */
+.registration-content label {
+    font-size: 0.9rem;
+    margin-right: 10px; 
+    width: 120px; 
+    text-align: left; 
+    font-weight: bold;
+}
+
+/* Input */
+.registration-content input {
+    width: 90%; 
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4B80D7;
+    color: white;
+    font-size: 0.9rem;
+    margin-left: 10px; 
+    font-weight: 760;
+    font-weight: bold;
+    
+}
+
+
+/* Tombol Enroll */
+.enroll-button {
+    background-color: #4B80D7;
+    color: white;
+    font-weight: bold;
+    width: 130px;
+    font-size: 15px;
+    padding: 10px ;
+    margin-left: 20px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.enroll-button:hover {
+    background-color: #0b162a; 
+    color: #ffffff; 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.enroll-button:active {
+    transform: translateY(2px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+

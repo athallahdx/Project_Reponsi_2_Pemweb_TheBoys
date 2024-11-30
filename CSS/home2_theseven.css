@@ -1002,14 +1002,24 @@ body {
     font-weight: bold;
     color: #0b162a;
     font-size: 1.4rem;
-    font-weight: bold;
     padding: 15px 60px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease; 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .enroll-button-4:hover {
-    background-color: #dcdcdc;
+    background-color: #0b162a; 
+    color: #ffffff; 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
 }
+
+
+.enroll-button-4:active {
+    transform: translateY(2px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
