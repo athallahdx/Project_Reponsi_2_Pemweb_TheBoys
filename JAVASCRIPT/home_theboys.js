@@ -40,11 +40,10 @@ function setupObserver(selector) {
       const imageElement = document.getElementById(imageId);
       const currentSrc = imageElement.src;
   
-      // Memeriksa apakah gambar yang sedang tampil adalah gambar pertama
       if (currentSrc.endsWith(imagePath1)) {
-          imageElement.src = imagePath2; // Ganti dengan gambar kedua
+          imageElement.src = imagePath2; 
       } else {
-          imageElement.src = imagePath1; // Reset gambar ke gambar pertama
+          imageElement.src = imagePath1;
       }
     });
   }

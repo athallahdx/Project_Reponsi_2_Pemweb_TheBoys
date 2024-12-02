@@ -14,7 +14,7 @@ body {
 
 /* ................................................................................. */
 /* ............................Container1.......................................... */
-/* Container utama */
+
 .container-1 {
     position: relative;
     width: 100%;
@@ -32,7 +32,7 @@ body {
     height: 60vw;
     background: radial-gradient(circle, #84D4FF, transparent 70%);
     border-radius: 50%;
-    top: 10vw; 
+    top: 5vw; 
     left: -20vw;
     filter: blur(15vw); 
     animation: glowEffect 8s infinite alternate ease-in-out;
@@ -54,8 +54,6 @@ body {
     z-index: -1; 
 }
 
-
-
 @keyframes glowEffect {
     0% {
         transform: scale(1);
@@ -68,7 +66,139 @@ body {
     }
 }
 
+.dashboard-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.dashboard-link img {
+    width: 20px;
+    height: 20px;
+}
+
+.dashboard-link p {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 90px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+p {
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+/* ................................................................................. */
+/* ............................HOMELANDER.......................................... */
+.image-container-1 {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px; 
+    width: 250px; 
+    height: 360px; 
+    background: #FF4C65; 
+    box-shadow: 0 10p 15px rgba(255, 76, 101, 0.5);
+    padding: 15px; 
+}
 
 
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 30% , #001E82); 
+    z-index: 3;
+    border-radius: 30px; 
+    opacity: 0.7;
+}
+
+/* Gambar */
+.image-container-1 img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    border-radius: 30px; 
+    object-fit: cover;
+    margin-top: -96px;
+    opacity: 0; 
+    transition: opacity 2s ease-in-out; 
+}
+
+.image-container-1 img.visible {
+    opacity: 1; 
+}
+
+.glow-border {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 7px solid #FF4C65;
+    border-radius: 40px;
+    z-index: 1;
+    animation: glow 2s linear infinite; 
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #FF4C65;
+    }
+    50% {
+        box-shadow: 0 0 50px #FF4C65;
+    }
+    100% {
+        box-shadow: 0 0 10px #FF4C65;
+    }
+}
 
 
+/* Teks di dalam container */
+.text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.text-overlay h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.text-overlay p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #00F2FF; 
+}
