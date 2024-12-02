@@ -7,11 +7,11 @@
 body {
     font-family: Arial, sans-serif;
     background: #29324B;
-    background: url('../../ASSET/THESEVEN/DASHBOARD/dashboard2_bgheader.png') no-repeat center top; /* Posisi gambar di atas dan tidak ada pengulangan */
+    background: url('../../ASSET/THESEVEN/DASHBOARD/dashboard2_bgheader.png') no-repeat center top; 
     background-size: cover;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Pastikan body setidaknya setinggi layar */
+    min-height: 100vh;
 }
 
 
@@ -172,16 +172,15 @@ body {
 /* ............................Container1.......................................... */
 
 .container-1 {
-    margin-top: 60px; /* Memberi ruang untuk navbar */
+    margin-top: 60px; 
     padding: 40px;
     color: #29324B;
     font-family: Arial, sans-serif;
 }
 
-/* Styling untuk header */
 .dashboard-header {
     margin-bottom: 30px;
-    text-align: left; /* Posisi kiri */
+    text-align: left; 
     color: white;
     margin-left: 20px;
 }
@@ -210,15 +209,13 @@ body {
     font-size: 15px;
     color: #ffffff;
     font-weight: bold;
-    line-height: 1.8; /* Menambah jarak antar baris */
+    line-height: 1.8;
     margin-bottom: 100px;
 }
 
-
-/* Styling untuk dashboard cards */
 .dashboard-cards {
     display: flex;
-    justify-content: center; /* Tengah secara horizontal */
+    justify-content: center; 
     gap: 20px;
     margin-top: 20px;
     margin-left: 20px;
@@ -235,26 +232,26 @@ body {
     color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
-    z-index: 0; /* Gambar pada layer paling bawah */
-    opacity: 0; /* Mulai dengan opasitas 0, agar tersembunyi */
-    transform: translateY(50px); /* Mulai dengan posisi lebih rendah */
-    animation: cardFadeIn 1.5s ease-out forwards; /* Animasi muncul */
+    z-index: 0;
+    opacity: 0; 
+    transform: translateY(50px);
+    animation: cardFadeIn 1.5s ease-out forwards;
 }
 
 /* Keyframe untuk animasi muncul */
 @keyframes cardFadeIn {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Mulai dari bawah */
+        transform: translateY(50px); 
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Bergerak ke posisi normal */
+        transform: translateY(0); 
     }
 }
 
 .card:hover {
-    transform: scale(1.05); /* Efek zoom */
+    transform: scale(1.05);
 }
 
 .card img {
@@ -263,7 +260,6 @@ body {
     object-fit: cover;
 }
 
-/* Overlay dengan warna gradasi */
 .card .overlay {
     position: absolute;
     top: 0;
@@ -271,60 +267,54 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #004781, #009CEA);
-    z-index: 1; /* Overlay berada di atas gambar */
-    opacity: 0.3; /* Lebih pudar */
-    transition: opacity 0.3s ease; /* Transisi halus */
+    z-index: 1; 
+    opacity: 0.3; 
+    transition: opacity 0.3s ease; 
 }
 
 .card:hover .overlay {
-    opacity: 0.7; /* Meningkatkan opasitas saat hover */
+    opacity: 0.7; 
 }
 
-
-/* Konten card (ikon, teks) */
-/* Dashboard Cards */
 .card .content {
     position: absolute;
     margin-top: 100px;
     margin-left: 20px;
     top: 0;
-    left: 0;/* Tengah vertikal dan horizontal */
-    z-index: 2; /* Konten di atas overlay */
+    left: 0;
+    z-index: 2; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Konten diatur ke kiri */
+    align-items: flex-start; 
     padding: 10px;
-    gap: 5px; /* Jarak antar elemen */
+    gap: 5px; 
 }
 
-/* Flex container untuk ikon dan teks */
 .card .text-content {
     display: flex;
-    align-items: center; /* Ikon dan teks berada di satu baris */
-    gap: 10px; /* Jarak antara ikon dan teks */
+    align-items: center; 
+    gap: 10px;
 }
 
-/* Styling untuk ikon */
 .card .card-icon {
-    height: 30px; /* Ukuran ikon yang lebih besar */
-    width: 30px; /* Sesuaikan dengan tinggi */
-    object-fit: contain; /* Pastikan gambar ikon tidak terpotong */
+    height: 30px;
+    width: 30px; 
+    object-fit: contain; 
 
 }
 
-/* Heading (h3) */
+
 .card h3 {
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    display: inline-block; /* Menjaga h3 bersebelahan dengan ikon */
+    display: inline-block; 
 }
 
-/* Paragraph */
 .card p {
     margin: 5px 0 0;
     font-size: 14px;
     color: #dcdcdc;
-    order: 2; /* Letakkan p di bawah h3 */
+    order: 2; 
 }
