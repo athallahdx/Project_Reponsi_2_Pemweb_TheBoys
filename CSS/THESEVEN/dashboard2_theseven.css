@@ -7,6 +7,8 @@
 body {
     font-family: Arial, sans-serif;
     background: #29324B;
+    background: url('../../ASSET/THESEVEN/DASHBOARD/dashboard2_bgheader.png') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
