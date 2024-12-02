@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #29324B;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+/* Container utama */
+.container-1 {
+    position: relative;
+    width: 100%;
+    height: 400vh; 
+    background-color: #29324B; 
+    overflow: hidden;
+    z-index: -1; 
+}
+
+/* Efek lingkaran gradasi biru di kiri atas */
+.container-1::before {
+    content: '';
+    position: absolute;
+    width: 60vw; 
+    height: 60vw;
+    background: radial-gradient(circle, #84D4FF, transparent 70%);
+    border-radius: 50%;
+    top: 10vw; 
+    left: -20vw;
+    filter: blur(15vw); 
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; 
+}
+
+/* Efek lingkaran gradasi ungu di kanan bawah */
+.container-1::after {
+    content: '';
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, #FF84D4, transparent 70%);
+    border-radius: 50%;
+    top: 115vw;
+    right: -20vw;
+    filter: blur(15vw); 
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; 
+}
+
+
+
+@keyframes glowEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
