@@ -22,5 +22,6 @@ setupObserver('.image-container-1');
 setupObserver('.image-container-2');
 setupObserver('.image-container-3');
 setupObserver('.image-container-4');
-// setupObserver('.image-container-5');
-// setupObserver('.image-container-6');
+setupObserver('.image-container-5');
+setupObserver('.image-container-6');
+setupObserver('.image-container-7');

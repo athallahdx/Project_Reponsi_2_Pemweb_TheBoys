@@ -18,7 +18,7 @@ body {
 .container-1 {
     position: relative;
     width: 100%;
-    height: 400vh; 
+    height: 330vh; 
     background-color: #29324B; 
     overflow: hidden;
     z-index: -1; 
@@ -47,7 +47,7 @@ body {
     height: 60vw;
     background: radial-gradient(circle, #FF84D4, transparent 70%);
     border-radius: 50%;
-    top: 115vw;
+    top: 80vw;
     right: -20vw;
     filter: blur(15vw); 
     animation: glowEffect 8s infinite alternate ease-in-out;
@@ -154,7 +154,7 @@ p {
     object-fit: cover;
     margin-top: -96px;
     opacity: 0; 
-    transition: opacity 2s ease-in-out; 
+    transition: opacity 1.5s ease-in-out; 
 }
 
 .image-container-1 img.visible {
@@ -217,21 +217,20 @@ p {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 150px; /* Jarak antar elemen */
-    margin-top: 50px; /* Jarak dari container sebelumnya */
+    gap: 150px; 
+    margin-top: 50px; 
 }
 
 /* ................................................................................. */
 /* ............................THE DEEP.......................................... */
 
-/* Container untuk "The Deep" */
 .image-container-2 {
     position: relative;
     display: inline-block;
     border-radius: 30px;
     width: 250px;
     height: 360px;
-    background: #00FF6F; /* Warna hijau */
+    background: #00FF6F; 
     box-shadow: 0 10px 15px rgba(0, 255, 111, 0.5);
     padding: 15px;
 }
@@ -258,7 +257,7 @@ p {
     margin-left: -15px;
     margin-top: -135px;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .image-container-2 img.visible {
@@ -316,14 +315,13 @@ p {
 /* ................................................................................. */
 /* ............................BLACK NOIR.......................................... */
 
-/* Container untuk "Black Noir" */
 .image-container-3 {
     position: relative;
     display: inline-block;
     border-radius: 30px;
     width: 250px;
     height: 360px;
-    background: #DFDFDF; /* Warna abu-abu terang */
+    background: #DFDFDF; 
     box-shadow: 0 10px 15px rgba(223, 223, 223, 0.5);
     padding: 15px;
 }
@@ -350,7 +348,7 @@ p {
     margin-left: 10px;
     margin-top: -78px;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .image-container-3 img.visible {
@@ -408,14 +406,13 @@ p {
 /* ................................................................................. */
 /* ............................A-TRAIN............................................. */
 
-/* Container untuk "A-Train" */
 .image-container-4 {
     position: relative;
     display: inline-block;
     border-radius: 30px;
     width: 250px;
     height: 360px;
-    background: #3792CB; /* Warna biru */
+    background: #3792CB; 
     box-shadow: 0 10px 15px rgba(55, 146, 203, 0.5);
     padding: 15px;
 }
@@ -442,7 +439,7 @@ p {
     margin-left: -15px;
     margin-top: -72px;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .image-container-4 img.visible {
@@ -492,6 +489,288 @@ p {
     font-size: 15px;
     margin: 5px 0 0;
     color: #FF0004;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+
+
+
+/* ................................................................................. */
+/* ............................STORMFRONT.......................................... */
+
+.image-container-5 {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+    width: 250px;
+    height: 360px;
+    background: #FF00BB; 
+    box-shadow: 0 10px 15px rgba(255, 0, 187, 0.5);
+    padding: 15px;
+    margin-top: 90px;
+
+}
+
+.image-overlay-5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 30%, #000000);
+    z-index: 3;
+    border-radius: 30px;
+    opacity: 0.7;
+}
+
+.image-container-5 img {
+    position: relative;
+    z-index: 2;
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-left: -15px; 
+    margin-top: -72px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.image-container-5 img.visible {
+    opacity: 1;
+}
+
+.glow-border-5 {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 7px solid #FF00BB; 
+    border-radius: 40px;
+    z-index: 1;
+    animation: glow-5 2s linear infinite;
+}
+
+@keyframes glow-5 {
+    0% {
+        box-shadow: 0 0 10px #FF00BB;
+    }
+    50% {
+        box-shadow: 0 0 50px #FF00BB;
+    }
+    100% {
+        box-shadow: 0 0 10px #FF00BB;
+    }
+}
+
+.text-overlay-5 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.text-overlay-5 h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #FFFFFF; 
+}
+
+.text-overlay-5 p {
+    font-size: 15px;
+    margin: 5px 0 0;
+    color: #00AAFF; 
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+
+/* ................................................................................. */
+/* ............................QUEEN MAEVE.......................................... */
+
+.image-container-6 {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+    width: 250px;
+    height: 360px;
+    background: #FF7700; 
+    box-shadow: 0 10px 15px rgba(255, 119, 0, 0.5);
+    padding: 15px;
+    margin-top: 90px;
+
+}
+
+.image-overlay-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 30%, #000000);
+    z-index: 3;
+    border-radius: 30px;
+    opacity: 0.7;
+}
+
+.image-container-6 img {
+    position: relative;
+    z-index: 2;
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-left: -15px; 
+    margin-top: -110px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.image-container-6 img.visible {
+    opacity: 1;
+}
+
+.glow-border-6 {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 7px solid #FF7700; 
+    border-radius: 40px;
+    z-index: 1;
+    animation: glow-6 2s linear infinite;
+}
+
+@keyframes glow-6 {
+    0% {
+        box-shadow: 0 0 10px #FF7700;
+    }
+    50% {
+        box-shadow: 0 0 50px #FF7700;
+    }
+    100% {
+        box-shadow: 0 0 10px #FF7700;
+    }
+}
+
+.text-overlay-6 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.text-overlay-6 h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #FFFFFF; 
+}
+
+.text-overlay-6 p {
+    font-size: 15px;
+    text-align: left;
+    margin: 5px 0 0;
+    color: #D9FF00; 
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+
+/* ................................................................................. */
+/* ............................STARLIGHT............................................ */
+
+.image-container-7 {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+    width: 250px;
+    height: 360px;
+    background: #FFFB00; 
+    box-shadow: 0 10px 15px rgba(255, 251, 0, 0.5);
+    padding: 15px;
+    margin-top: 90px;
+
+}
+
+.image-overlay-7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 30%, #000000);
+    z-index: 3;
+    border-radius: 30px;
+    opacity: 0.7;
+}
+
+.image-container-7 img {
+    position: relative;
+    z-index: 2;
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-left: -15px; 
+    margin-top: -75px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.image-container-7 img.visible {
+    opacity: 1;
+}
+
+.glow-border-7 {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 7px solid #FFFB00; 
+    border-radius: 40px;
+    z-index: 1;
+    animation: glow-7 2s linear infinite;
+}
+
+@keyframes glow-7 {
+    0% {
+        box-shadow: 0 0 10px #FFFB00;
+    }
+    50% {
+        box-shadow: 0 0 50px #FFFB00;
+    }
+    100% {
+        box-shadow: 0 0 10px #FFFB00;
+    }
+}
+
+.text-overlay-7 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.text-overlay-7 h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #FFFFFF; 
+}
+
+.text-overlay-7 p {
+    font-size: 15px;
+    margin: 5px 0 0;
+    color: #00FF1E; 
     font-weight: normal;
     letter-spacing: 2px;
 }
