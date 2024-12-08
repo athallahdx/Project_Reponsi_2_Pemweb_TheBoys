@@ -21,7 +21,7 @@ body {
     height: 330vh; 
     background-color: #29324B; 
     overflow: hidden;
-    z-index: -1; 
+    z-index: 1; 
 }
 
 /* Efek lingkaran gradasi biru di kiri atas */
@@ -686,6 +686,8 @@ p {
 /* ................................................................................. */
 /* ............................STARLIGHT............................................ */
 
+
+
 .image-container-7 {
     position: relative;
     display: inline-block;
@@ -696,7 +698,8 @@ p {
     box-shadow: 0 10px 15px rgba(255, 251, 0, 0.5);
     padding: 15px;
     margin-top: 90px;
-
+    cursor: pointer;
+    z-index: 10;
 }
 
 .image-overlay-7 {
