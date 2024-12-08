@@ -202,91 +202,28 @@ body {
     z-index: 0; 
 }
 
-@keyframes spawnFromBottom {
-    0% {
-        transform: translateY(100px); 
-        opacity: 0; 
-    }
-    100% {
-        transform: translateY(0); 
-        opacity: 1; 
-    }
-}
-
 .registration-form {
     position: relative;
     display: flex;
     align-items: center;
     background: linear-gradient(to top left, #1A2132, #2A385B);
     border-radius: 20px;
-    width: 800px; 
+    width: 500px; 
     height: 450px; 
     padding-left: 290px; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     z-index: 1; 
     animation: spawnFromBottom 1s ease-out; 
-}
-
-
-/* Kotakan gradasi di belakang */
-.gradient-box {
-    position: absolute; 
-    margin-left: 60px;
-    margin-top: 70px;
-    margin-bottom: 120px;   
-    left: 0;
-    width: 180px;
-    height: 310px;
-    background: linear-gradient(-145deg, #00B8DD, #7525E6, #FF84D1);
-    background-size: 200% 200%; 
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    z-index: 2;
-    animation: move-gradient 2s infinite linear;
-}
-
-@keyframes move-gradient {
-    0% {
-        background-position: 0% 50%; 
-    }
-    50% {
-        background-position: 100% 50%; 
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    gap:20px;
 }
 
 .logo-image {
     position: absolute;
     top: 20px;
-    left: 70%;
+    left: 50%;
     transform: translateX(-50%);
     width: 80px;
     z-index: 3; 
-}
-
-@keyframes fadeIn {
-    0% {
-        transform: translateX(-50%) scale(0.8); 
-        opacity: 0; 
-    }
-    100% {
-        transform: translateX(-50%) scale(1); 
-        opacity: 1; 
-    }
-}
-
-.hero-image {
-    position: absolute;
-    bottom: -8px;
-    left: 75%;
-    transform: translateX(-50%);
-    width: 280px;
-    z-index: 10; 
 }
 
 
@@ -294,8 +231,9 @@ body {
 .registration-content {
     position: relative;
     flex: 1; 
+    gap: 20px;
     padding: 0px 80px;
-    margin-left: -70px;
+    margin-left: -300px;
     margin-top: 30px;
     color: white;
     display: flex;
@@ -310,14 +248,16 @@ body {
     margin: 0;
     text-transform: uppercase;
     font-weight: 760;
+    text-align: center;
 }
 
 .registration-content h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ffffff;
-    margin-top: 10px;
+    margin-top: -10px;
     margin-bottom: 0px;
     font-weight: 760;
+    text-align: center;
 }
 
 .registration-content hr {
@@ -349,8 +289,9 @@ body {
 }
 
 /* Input */
-.registration-content .password,.superpower,.age, .nickname-2, .fullname {
+.registration-content .password, .nickname-2 {
     width: 90%; 
+    gap:10px;
     padding: 5px;
     border: none;
     border-radius: 5px;
@@ -372,8 +313,8 @@ body {
     width: 130px;
     font-size: 15px;
     padding: 10px ;
-    margin-left: 20px;
-    margin-top: 5px;
+    margin-left: 100px;
+    margin-top: 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -399,7 +340,7 @@ body {
     font-size: 14px;
     text-align: left;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .login-link a {

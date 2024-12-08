@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #29324B;
+    margin: 0;
+    padding: 0;
+}
+
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+.container-1 {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    background-color: #29324B; 
+    overflow: hidden;
+    z-index: 1; 
+}
+
+.dashboard-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.dashboard-link img {
+    width: 25px;
+    height: 25px;
+}
+
+.dashboard-link p {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 90px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+/* ................................................................................. */
+/* ............................Content Layout....................................... */
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    gap: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(to top, #030027 60%, #554F98 99%);
+    border-radius: 15px;
+    z-index: 1;
+    overflow: hidden;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.image-box {
+    position: relative;
+    width: 260px;
+    height: 350px;
+    margin-top: 100px;
+    background: transparent; 
+    border-radius: 35px;
+    margin-left: -140px;
+    padding: 5px;
+    z-index: 3;  
+}
+
+.image-box img {
+    position: absolute; 
+    top: 80px; 
+    left: 100%;
+    margin-top: -40px;
+    margin-left: 280px;
+    transform: translateX(-100%); 
+    width: 150px; 
+    height:150px;
+    border-radius: 15px; 
+    z-index: 1;
+    align-items: center; 
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7)); 
+    z-index: -1;  
+    border-radius: 15px;
+    opacity: 1;
+}
+
+.content h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+}
+
+
+
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px; 
+    position: relative; 
+    margin-top: -250px;
+    margin-bottom: 50px;
+}
+
+#avatar {
+    display: none; 
+}
+
+#choose-file-label {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+#avatar-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-top: -150px;
+}
+
+#avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+}
+
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-left: 50px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 10px; 
+}
+
+.form-row label {
+    color: white;
+    font-weight: bold;
+    width: 120px; 
+}
+
+.form-row input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 400px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.edit-button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: black;
+    color: white;
+}
+#success-message {
+    display: none; /* Disembunyikan secara default */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Warna hijau untuk pesan sukses */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#success-message.visible {
+    display: block; /* Tampilkan pesan sukses */
+}
