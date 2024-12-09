@@ -13,6 +13,166 @@ body {
 }
 
 /* ................................................................................. */
+/* ............................Navbar styling.......................................... */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 38, 161, 0.7), rgba(242, 244, 248, 0));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px; 
+    height: 60px; 
+    animation: slideDown 1s forwards;
+}
+
+
+.logo-container .logo {
+    height: 30px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.logo-container .logo-2 {
+    height: 20px;
+    margin-bottom: 3px;
+    object-fit: contain;
+}
+
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideInText {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.hamburger {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+    color: #1c1616;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin-left: 25rem; 
+    margin-right: auto; 
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem); 
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active{
+    color: #51B1F9;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.profile-pic {
+    background-color: #D9D9D9;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); 
+}
+
+.nickname {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+        margin-left: 0;
+        justify-content: flex-start;
+        background: linear-gradient(to bottom, #142c5c,#f2f4f8);
+        position: fixed; 
+        top: 0; 
+        left: -50%; 
+        width: 50%; 
+        height: 100vh; 
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: left 0.3s ease; 
+        z-index: 999; 
+    }
+
+    .navbar {
+        padding: 5px 15px; 
+    }
+
+    .logo-container .logo {
+        height: 25px; 
+    }
+
+    .profile-container {
+        margin-right: 0;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001; 
+    }
+
+    .nav-links.show {
+        left: 0;
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+    }
+}
+
+/* ................................................................................. */
 /* ............................Container1.......................................... */
 
 .container-1 {
@@ -22,6 +182,7 @@ body {
     background-color: #29324B;
     overflow: hidden;
     z-index: 1;
+    margin-top: 35px;
 }
 
 .dashboard-link {

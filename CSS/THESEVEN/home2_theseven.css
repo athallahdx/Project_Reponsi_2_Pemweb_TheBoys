@@ -5,8 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #29324B;
+    font-family: Arial, sans-serif;   
     margin: 0;
     padding: 0;
 }
@@ -17,9 +16,9 @@ body {
     position: fixed;
     top: 0; 
     left: 0;
-    width: 100%;
-    background: linear-gradient(to bottom, #5e6477 , #f2f4f8); 
+    width: 100%;;
     z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 38, 161, 0.7), rgba(242, 244, 248, 0));
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,6 +30,13 @@ body {
 
 .logo-container .logo {
     height: 30px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.logo-container .logo-2 {
+    height: 20px;
+    margin-bottom: 3px;
     object-fit: contain;
 }
 
@@ -84,8 +90,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #555;
+.nav-links li a:hover, .nav-links li a.active{
+    color: #51B1F9;
 }
 
 
@@ -174,10 +180,11 @@ body {
 
 .container-1 {
     position: relative;
+    background: #29324B;
 }
 
 .container-1 .header-image {
-    margin-top: 10vh;
+
     width: 100%;
     object-fit: cover;
     height: auto;
@@ -703,8 +710,7 @@ body {
     gap: 20px;
     padding: 40px;
     text-align: center;
-    margin: 50px 0;
-
+    background: #29324B;
 }
 
 .container-3 h2 {
@@ -910,7 +916,7 @@ body {
 /* ............................Container4.......................................... */
 
 .container-4 {
-    margin-top: 50px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1023,3 +1029,8 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
 }
 
+.seven-text-end{
+    background: #29324B;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}

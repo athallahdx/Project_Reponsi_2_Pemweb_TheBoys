@@ -17,9 +17,9 @@ body {
     position: fixed;
     top: 0; 
     left: 0;
-    width: 100%;
-    background: linear-gradient(to bottom, #5e6477 , #f2f4f8); 
+    width: 100%;;
     z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 38, 161, 0.7), rgba(242, 244, 248, 0));
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,9 +28,15 @@ body {
     animation: slideDown 1s forwards;
 }
 
-
 .logo-container .logo {
     height: 30px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.logo-container .logo-2 {
+    height: 20px;
+    margin-bottom: 3px;
     object-fit: contain;
 }
 
@@ -83,8 +89,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #555;
+.nav-links li a:hover, .nav-links li a.active{
+    color: #51B1F9;
 }
 
 
@@ -169,18 +175,6 @@ body {
 /* ............................Container1.......................................... */
 
 
-body {
-    position: relative;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0b162a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
-    overflow: hidden;
-}
-
 .container-1 {
     position: relative;
     width: 100%;
@@ -191,30 +185,17 @@ body {
     overflow: hidden;
 }
 
-
 .header-image {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; 
-}
-
-@keyframes spawnFromBottom {
-    0% {
-        transform: translateY(100px); 
-        opacity: 0; 
-    }
-    100% {
-        transform: translateY(0); 
-        opacity: 1; 
-    }
+    z-index: -1; 
 }
 
 .registration-form {
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     background: linear-gradient(to top left, #1A2132, #2A385B);
@@ -227,6 +208,16 @@ body {
     animation: spawnFromBottom 1s ease-out; 
 }
 
+@keyframes spawnFromBottom {
+    0% {
+        transform: translateY(100px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
 
 /* Kotakan gradasi di belakang */
 .gradient-box {

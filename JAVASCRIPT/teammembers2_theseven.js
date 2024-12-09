@@ -27,5 +27,27 @@ setupObserver('.image-container-6');
 setupObserver('.image-container-7');
 
 
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+}
+
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.remove('show'); 
+    });
+});
+
+function hoverMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.style.transform = 'rotate(0deg)';
+}
+
+function resetMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.style.transform = 'rotate(0deg)';
+}
 
 
