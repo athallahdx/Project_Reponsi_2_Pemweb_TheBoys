@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boys</title>
+    <link rel="stylesheet" href="../../../CSS/THEBOYS/DASHBOARD/editprofile_theboys.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../../../ASSET/THEBOYS/home_logonavbar.png" alt="The BOYS Logo" class="logo">
+            <a href="../../../index.html">
+                <img src="../../../ASSET/THEBOYS/home_beranda.png" alt="Beranda" class="logo-2">
+            </a>
+        </div>
+        <div class="menu-overlay"></div>
+        <ul class="nav-links">
+            <li><a href="../home_theboys.html">HOME</a></li>
+            <li><a href="../community_theboys.html">COMMUNITY</a></li>
+            <li><a href="../dashboard_theboys.html" class="active">DASHBOARD</a></li>
+        </ul>
+        <div class="profile-container">
+            <img src="../../../ASSET/THEBOYS/home_profilnavbar.png" alt="Profile" class="profile-pic">
+            <span class="nickname">{Nickname}</span>
+        </div>
+    </nav>
+
+    <section class="container-1">
+        <a href="../../THEBOYS/dashboard_theboys.html" class="dashboard-link">
+            <img src="../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/teammembers_panah.png" alt="Panah">
+            <p>Dashboard</p>
+        </a>
+        <h1>Edit Profile</h1>
+
+        <div class="content">
+            <div class="form-container">
+                <div class="image-container">
+                    <div class="image-overlay">
+                        <img src="../../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/grid_theboys.png" alt="Overlay" class="image-top">
+                    </div>
+                    <div class="image-box">
+                        <img id="avatar-preview" src="../../../ASSET/THEBOYS/DASHBOARD/fotoprofile.png" alt="Profile" class="image-main">
+                    </div>
+                </div>
+
+                <div class="avatar-container">
+                    <label for="avatar" id="choose-file-label">Choose File</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+                
+
+                <div class="input-fields">
+                    <div class="form-row">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="ethnicity">Ethnicity</label>
+                        <input type="text" id="ethnicity" name="ethnicity">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="power">Ability</label>
+                        <input type="text" id="power" name="power">
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="edit-button" onclick="saveProfile()">Save</button>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="success-message">
+                <p>Profile updated successfully!</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="../../../JAVASCRIPT/editprofile2_theseven.js"></script>
+</body>
+</html>
