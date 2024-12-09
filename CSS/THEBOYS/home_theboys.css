@@ -1230,5 +1230,41 @@ body {
 
 
 
+.video-box {
+  position: relative;
+  width: 400px; /* Sesuaikan dengan kebutuhan */
+  height: 300px; /* Sesuaikan dengan kebutuhan */
+  overflow: hidden; /* Agar video tidak keluar dari kotak */
+  border-radius: 10px; /* Tambahkan jika ingin rounded edges */
+}
+
+.video-box .video-2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Agar video memenuhi kotak dengan proporsi yang benar */
+}
+
+.video-box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Warna overlay semi-transparan */
+  opacity: 0; /* Overlay tidak terlihat secara default */
+  transition: opacity 0.3s ease; /* Animasi saat hover */
+}
+
+.video-box:hover .overlay {
+  opacity: 1; /* Overlay terlihat saat hover */
+}
+
+.video-box .zoom-effect {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../ASSET/THEBOYS/some-overlay-image.png"); /* Opsional: jika ingin efek tambahan */
+  background-size: cover;
+  background-position: center;
+}
 
 
