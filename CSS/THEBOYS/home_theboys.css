@@ -12,6 +12,109 @@ body {
   background-position: center;
   background-repeat: no-repeat; 
 }
+/* ................................................................................. */
+/* ............................Navbar styling.......................................... */
+.navbar {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(242, 244, 248, 0)); /* Warna kuning */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px; 
+  height: 60px; 
+  animation: slideDown 1s forwards;
+}
+
+
+.logo-container .logo {
+  height: 40px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.logo-container .logo-2 {
+  height: 20px;
+  margin-bottom: 3px;
+  object-fit: contain;
+}
+
+/* Animasi muncul dari atas */
+@keyframes slideDown {
+  to {
+      top: 0;
+  }
+}
+
+@keyframes slideInText {
+  from {
+      left: -100%;
+  }
+  to {
+      left: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+  margin-left: 25rem; 
+  margin-right: auto; 
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  font-size: clamp(0.8rem, 2vw, 1rem); 
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active{
+  color: #FFF200;
+}
+
+
+.profile-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+  margin-right: 50px;
+}
+
+.profile-pic {
+  background-color: #D9D9D9;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); 
+}
+
+.nickname {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+
 
 
 .highlight-red {
@@ -225,6 +328,28 @@ body {
 }
 
 
+.read-more {
+  display: flex;
+  justify-content: left;
+  margin-top: 30px;
+}
+
+.read-more-button {
+  display: inline-block;
+  background-color: #fdfdf9; /* Warna kuning yang sesuai */
+  color: #5C0000;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-more-button:hover {
+  background-color: #969695; /* Warna lebih gelap untuk hover */
+  transform: scale(1.05); /* Efek memperbesar sedikit saat hover */
+}
 
 
 
@@ -513,6 +638,9 @@ body {
   text-align: center;
   margin-top: 50px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-3 h2 {
@@ -521,11 +649,22 @@ body {
   color: #ffffff; 
   margin-bottom: 10px;
   margin-left: 20px;
-  text-align: left;
+  text-align: center;
   opacity: 0; 
   transform: translateX(-50px); 
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
+
+.container-3 .brush-image {
+  display: block;
+  width: 650px; 
+  margin-top: -120px;
+  height: auto; 
+  opacity: 0.8; 
+  z-index: -1;
+}
+
+
 
 .container-3 h2.visible {
   opacity: 1;
