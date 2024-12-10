@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  /* ................................................................................. */
+  /* ............................Navbar styling.......................................... */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(242, 244, 248, 0)); /* Warna kuning */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px; 
+    height: 60px; 
+    animation: slideDown 1s forwards;
+}
+
+
+.logo-container .logo {
+    height: 40px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.logo-container .logo-2 {
+    height: 20px;
+    margin-bottom: 3px;
+    object-fit: contain;
+}
+
+  /* Animasi muncul dari atas */
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideInText {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin-left: 25rem; 
+    margin-right: auto; 
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem); 
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active{
+    color: #FFF200;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.profile-pic {
+    background-color: #D9D9D9;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); 
+}
+
+.nickname {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.link-profile {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+
+/* Kontainer utama */
+.container-1 {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Gambar Background */
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+
+@keyframes spawnFromBottom {
+    0% {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+/* Konten Form */
+.registration-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #FF8438, #FFDE38); 
+    border-radius: 20px;
+    width: 700px;
+    height: 400px;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    animation: spawnFromBottom 1s ease-out;
+}
+
+/* Header Form */
+.header-form {
+    position: relative;
+    text-align: center;
+
+}
+
+.hero-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1px;
+    margin-top: -20px;
+}
+
+.teks-image, .teks2-image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.teks-image {
+    margin-top: -20px;
+    width: 110px;
+    position: relative;
+}
+
+.teks2-image {
+    margin-top: -12px;
+    width: 300px;
+    position: relative;
+}
+
+/* Konten Form */
+.registration-content {
+    width: 100%;
+    padding: 0 40px 0 40px;
+}
+
+.registration-content hr {
+    margin: 10px 0 20px;
+    border: none;
+    height: 3px;
+    background-color: #6E0000;
+    opacity: 01;
+}
+
+/* Form Input */
+.input-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    margin-left: 0; 
+}
+
+/* Label */
+.registration-content label {
+    color: #6E0000;
+    font-size: 0.9rem;
+    margin-right: 10px; 
+    width: 400px; 
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Input */
+.registration-content .username, .password {
+    width: 100%; 
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #6E0000;
+    font-size: 0.9rem;
+    margin-left: 10px; 
+    font-weight: 760;
+    font-weight: bold;
+    margin-left:-60px;
+    
+}
+
+/* Tombol Enroll */
+.enroll-button {
+    background-color: #920000;
+    color: white;
+    font-weight: bold;
+    width: 170px;
+    font-size: 15px;
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+
+.enroll-button:hover {
+    background-color: #ffffff; 
+    color: #920000; 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.enroll-button:active {
+    transform: translateY(2px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.login-link {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.login-link a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
