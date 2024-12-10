@@ -114,7 +114,11 @@ body {
     color: #ffffff;
 }
 
-
+.link-profile {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 
 
