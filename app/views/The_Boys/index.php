@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who Are "The Seven"</title>
     <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/home_theboys.css">
+     <style>
+        
+     </style>
 </head>
 <body data-assets-img="<?= ASSETSIMG ?>">
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="<?= ASSETSIMG ?>The_Boys/home_logonavbar.png" alt="The BOYS Logo" class="logo">
+            <a href="<?= BASEURL ?>Home/Index">
+                <img src="<?= ASSETSIMG ?>The_Boys/home_beranda.png" alt="Beranda" class="logo-2">
+            </a>
+        </div>
+        <div class="menu-overlay"></div>
+        <ul class="nav-links">
+            <li><a href="<?= BASEURL ?>TheBoys/Index" class="active">HOME</a></li>
+            <li><a href="<?= BASEURL ?>TheBoys/Community">COMMUNITY</a></li>
+            <li><a href="<?= BASEURL ?>TheBoys/Dashboard">DASHBOARD</a></li>
+        </ul>
+        <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
+            <div class="profile-container">
+                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
+                <span class="nickname">{Nickname}</span>
+            </div>
+        </a>
+    </nav>
     <section class="container-1">
         <div class="header">
             <img src="<?= ASSETSIMG ?>The_Boys/home_vector.png" alt="The Seven Header" class="header-image">
             <h1 class="headline">WHO ARE "THE SEVEN"</h1>
         </div>
-
-        
 
         <div class="news">
             <div class="text-section1">
@@ -44,11 +65,17 @@
                         Let’s pull back the curtain on The Seven and reveal the truth that Vought doesn’t want you to see: not all heroes wear capes.
                         And sometimes, the ones who do are the real villains.
                     </p>
+                    <div class="read-more">
+                        <a href="<?= BASEURL ?>TheBoys/Details" class="read-more-button">Read More</a>
+                    </div>
                 </div>
             </div>
             <div class="image-1">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_whiteblack.png" alt="The Seven Illustration" class="footer-image">
             </div>
+
+
+
         </div>
     </section>
 
@@ -58,24 +85,33 @@
             <p>Leaked footage of some of the <span class="highlight-red">disgusting</span> things they've done.</p>
         </div>
         <div class="image-2">
-            <div class="image-box">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_whiteblack.png" alt="Image 1" class="image-2">
+            <div class="video-box">
+                <video class="video-2" autoplay muted loop>
+                    <source src="<?= ASSETSIMG ?>The_Boys/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="overlay">
                     <div class="zoom-effect"></div>
                 </div>
-            </div>
-            <div class="image-box">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_whiteblack.png" alt="Image 2" class="image-2">
+            </div>            
+            <div class="video-box">
+                <video class="video-2" autoplay muted loop>
+                    <source src="<?= ASSETSIMG ?>The_Boys/video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="overlay">
                     <div class="zoom-effect"></div>
                 </div>
-            </div>
-            <div class="image-box">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_whiteblack.png" alt="Image 3" class="image-2">
+            </div>     
+            <div class="video-box">
+                <video class="video-2" autoplay muted loop>
+                    <source src="<?= ASSETSIMG ?>The_Boys/video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="overlay">
                     <div class="zoom-effect"></div>
                 </div>
-            </div>
+            </div>     
         </div>
 
         <div class="vaksin-2">
@@ -109,12 +145,13 @@
 
     <section class="container-3">
         <h2>LET'S PLAY A GAME</h2>
+        <img class="brush-image" src="<?= ASSETSIMG ?>The_Boys/home_brush.png" alt="Brush Decoration">
         <h3>ELIMINATE ALL PIG ALL THE WAY TO HOMELANDER</h3>
         <div class="character-1">
             <img id="character-image" src="<?= ASSETSIMG ?>The_Boys/theseven_blacknoir.png" alt="Black Noir">
                 <div class="character-text-1">
                     <p class="character-name">PIG #1 <br>Black Noir</p>
-                    <button id="change-image-button" class="action-button">TEBAS</button>
+                    <button id="change-image-button" class="action-button">KILL</button>
                 </div>
         </div>
 
@@ -122,7 +159,7 @@
             <img id="character-image-2" src="<?= ASSETSIMG ?>The_Boys/theseven_atrain.png" alt="A-Train">
             <div class="character-text-2">
                 <p class="character-name-2">PIG #2 <br>A-Train</p>
-                <button id="change-image-button-2" class="action-button">TEBAS</button>
+                <button id="change-image-button-2" class="action-button">KILL</button>
             </div>
         </div>
 
@@ -130,7 +167,7 @@
             <img id="character-image-3" src="<?= ASSETSIMG ?>The_Boys/theseven_stormfront.png" alt="Strom Front">
                 <div class="character-text-3">
                     <p class="character-name-3">PIG #3 <br>Stromfront</p>
-                    <button id="change-image-button-3" class="action-button">TEBAS</button>
+                    <button id="change-image-button-3" class="action-button">KILL</button>
                 </div>
         </div>
 
@@ -138,7 +175,7 @@
             <img id="character-image-4" src="<?= ASSETSIMG ?>The_Boys/theseven_thedeep.png" alt="The Deep">
             <div class="character-text-4">
                 <p class="character-name-4">PIG #4 <br>The Deep</p>
-                <button id="change-image-button-4" class="action-button">TEBAS</button>
+                <button id="change-image-button-4" class="action-button">KILL</button>
             </div>
         </div>
 
@@ -146,7 +183,7 @@
             <img id="character-image-5" src="<?= ASSETSIMG ?>The_Boys/theseven_homelander.png" alt="Homelander">
             <div class="character-text-5">
                 <p class="character-name-5">FINAL PIG <br>Homelander</p>
-                <button id="change-image-button-5" class="action-button">TEBAS</button>
+                <button id="change-image-button-5" class="action-button">KILL</button>
             </div>
         </div>        
     </section>
@@ -163,6 +200,8 @@
             <a href="<?= BASEURL ?>TheBoys/Register" class="enroll-button-4">ENROLL</a>
         </div>
     </section>
+    
+
     
     <script src="<?= ASSETSJS ?>The_Boys/home_theboys.js" ></script>
 </body>

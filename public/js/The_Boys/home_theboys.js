@@ -1,53 +1,55 @@
 const bodyElement = document.getElementsByTagName('body')[0];
 const assetsImg = bodyElement.getAttribute('data-assets-img');
 console.log(assetsImg);
-bodyElement.style.backgroundImage = `url('${assetsImg}The_Boys/LOGIN/login_layer.png')`;
+
+bodyElement.style.backgroundImage = `url('${assetsImg}The_Boys/home_background.png')`;
+
 
 // Fungsi untuk memulai Intersection Observer
 function setupObserver(selector) {
     const element = document.querySelector(selector);
     if (element) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, {
-            threshold: 0.5 
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); 
+          }
         });
-        observer.observe(element);
+      }, {
+        threshold: 0.5 
+      });
+      observer.observe(element);
     }
-}
+  }
+  
+  // Menyiapkan Intersection Observer untuk semua elemen
+  setupObserver('.headline');
+  setupObserver('.header-2');
+  setupObserver('.image-1');
+  setupObserver('.vaksin-text');
+  setupObserver('.container-3 h2');
+  setupObserver('.character-1');
+  setupObserver('.character-2');
+  setupObserver('.character-3');
+  setupObserver('.character-4');
+  setupObserver('.character-5');
+  setupObserver('.theboys-card-4');
 
-// Menyiapkan Intersection Observer untuk semua elemen
-setupObserver('.headline');
-setupObserver('.header-2');
-setupObserver('.image-1');
-setupObserver('.vaksin-text');
-setupObserver('.container-3 h2');
-setupObserver('.character-1');
-setupObserver('.character-2');
-setupObserver('.character-3');
-setupObserver('.character-4');
-setupObserver('.character-5');
-setupObserver('.theboys-card-4');
+  // UNTUK MINI GAME...................................................
 
-// UNTUK MINI GAME...................................................
-
-function toggleImage(buttonId, imageId, imagePath1, imagePath2) {
+  function toggleImage(buttonId, imageId, imagePath1, imagePath2) {
     document.getElementById(buttonId).addEventListener("click", function () {
-        const imageElement = document.getElementById(imageId);
-        const currentSrc = imageElement.src;
-
-        if (currentSrc.endsWith(imagePath1)) {
-            imageElement.src = imagePath2; 
-        } else {
-            imageElement.src = imagePath1;
-        }
+      const imageElement = document.getElementById(imageId);
+      const currentSrc = imageElement.src;
+  
+      if (currentSrc.endsWith(imagePath1)) {
+          imageElement.src = imagePath2; 
+      } else {
+          imageElement.src = imagePath1;
+      }
     });
-}
+  }
 
 // // Panggil fungsi toggleImage untuk setiap button dan image public\img\The_Boys\theseven_blacknoir2.png
 toggleImage("change-image-button", "character-image", `${assetsImg}/The_Boys/theseven_blacknoir2.png`, `${assetsImg}/The_Boys/theseven_blacknoir2.png`);
