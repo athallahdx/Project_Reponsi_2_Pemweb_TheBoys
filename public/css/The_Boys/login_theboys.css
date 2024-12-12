@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #29324B;
+    margin: 0;
+    padding: 0;
+}
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Kontainer utama */
+.container-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Gambar Background */
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.6; 
+    z-index: 0; 
+}
+
+@keyframes spawnFromBottom {
+    0% {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+/* Konten Form */
+.registration-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #FF8438, #FFDE38); 
+    border-radius: 20px;
+    width: 700px;
+    height: 450px;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    animation: spawnFromBottom 1s ease-out;
+}
+
+/* Header Form */
+.header-form {
+    position: relative;
+    text-align: center;
+
+}
+
+.hero-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1px;
+    margin-top: -20px;
+}
+
+.teks-image, .teks2-image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.teks-image {
+    margin-top: -20px;
+    width: 110px;
+    position: relative;
+}
+
+.teks2-image {
+    margin-top: -12px;
+    width: 300px;
+    position: relative;
+}
+
+/* Konten Form */
+.registration-content {
+    width: 100%;
+    padding: 0 40px 0 40px;
+}
+
+.registration-content hr {
+    margin: 10px 0 20px;
+    border: none;
+    height: 3px;
+    background-color: #6E0000;
+    opacity: 01;
+}
+
+/* Form Input */
+.input-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    margin-left: 0; 
+}
+
+/* Label */
+.registration-content label {
+    color: #6E0000;
+    font-size: 0.9rem;
+    margin-right: 10px; 
+    width: 400px; 
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Input */
+.registration-content input {
+    width: 100%; 
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #6E0000;
+    font-size: 0.9rem;
+    margin-left: 10px; 
+    font-weight: 760;
+    font-weight: bold;
+    margin-left:-60px;
+    
+}
+
+/* Tombol Enroll */
+.enroll-button {
+    background-color: #920000;
+    color: white;
+    font-weight: bold;
+    width: 170px;
+    font-size: 15px;
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+
+.enroll-button:hover {
+    background-color: #ffffff; 
+    color: #920000; 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.enroll-button:active {
+    transform: translateY(2px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+

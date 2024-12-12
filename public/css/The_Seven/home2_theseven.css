@@ -1,0 +1,1025 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #29324B;
+    margin: 0;
+    padding: 0;
+}
+
+/* ................................................................................. */
+/* ............................Navbar styling.......................................... */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #5e6477 , #f2f4f8); 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px; 
+    height: 60px; 
+    animation: slideDown 1s forwards;
+}
+
+
+.logo-container .logo {
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Animasi muncul dari atas */
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideInText {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.hamburger {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+    color: #1c1616;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin-left: 25rem; 
+    margin-right: auto; 
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem); 
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #555;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.profile-pic {
+    background-color: #D9D9D9;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); 
+}
+
+.nickname {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+        margin-left: 0;
+        justify-content: flex-start;
+        background: linear-gradient(to bottom, #142c5c,#f2f4f8);
+        position: fixed; 
+        top: 0; 
+        left: -50%; 
+        width: 50%; 
+        height: 100vh; 
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: left 0.3s ease; 
+        z-index: 999; 
+    }
+
+    .navbar {
+        padding: 5px 15px; 
+    }
+
+    .logo-container .logo {
+        height: 25px; 
+    }
+
+    .profile-container {
+        margin-right: 0;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001; 
+    }
+
+    .nav-links.show {
+        left: 0;
+        display: flex;
+    }
+
+    /* Styling untuk link di dalam menu */
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+    }
+}
+
+
+
+/* ................................................................................. */
+/* ............................Container1.......................................... */
+
+
+.container-1 {
+    position: relative;
+}
+
+.container-1 .header-image {
+    margin-top: 10vh;
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+/* Styling untuk konten teks */
+.content-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100%;
+    padding: 0 5%;
+    max-width: 600px;
+    animation: slideInText 1s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Styling untuk logo Vought */
+.content-text .vought-logo {
+    width: 250px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+/* Styling untuk teks */
+.content-text h1 {
+    color: white;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.2s;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.content-text p {
+    color: white;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.4s;
+}
+
+
+
+@media (max-width: 768px) {
+    .content-text {
+        padding: 0 5%; 
+    }
+
+    .content-text .vought-logo {
+        width: 100px;
+    }
+
+    .content-text h1 {
+        font-size: 1rem; 
+        padding: 0px;
+    }
+
+    .content-text p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-text .vought-logo {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+
+    .content-text h1 {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .content-text p {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+/* ................................................................................. */
+/* ............................Container2.......................................... */
+/* Container utama */
+.container-2 {
+    position: relative;
+    width: 100%;
+    height: 450vh; 
+    background-color: #29324B; 
+    overflow: hidden;
+    z-index: -1; 
+}
+
+/* Efek lingkaran gradasi biru di kiri atas */
+.container-2::before {
+    content: '';
+    position: absolute;
+    width: 60vw; 
+    height: 60vw;
+    background: radial-gradient(circle, #84D4FF, transparent 70%);
+    border-radius: 50%;
+    top: 50vw; 
+    left: -20vw;
+    filter: blur(15vw); 
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; 
+}
+
+/* Efek lingkaran gradasi ungu di kanan bawah */
+.container-2::after {
+    content: '';
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, #FF84D4, transparent 70%);
+    border-radius: 50%;
+    top: 115vw;
+    right: -20vw;
+    filter: blur(15vw); 
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1; 
+}
+
+
+
+@keyframes glowEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.vought-logo-2 { 
+    display: block; 
+    margin: 0 auto; 
+    width: clamp(50px, 12vw, 180px); 
+    height: auto; 
+    position: absolute; 
+    top: 4%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    opacity: 0; 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.vought-logo-2.visible {
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+
+
+@media (max-width: 768px) {
+    .vought-logo-2 {
+        width: clamp(40px, 9vw, 120px); 
+        top: 1%; 
+        left: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .vought-logo-2 {
+        width: clamp(30px, 6vw, 100px);
+        top: 1%; 
+        left: 50%;
+    }
+}
+
+
+
+.background-image-2 {
+    position: absolute;
+    top: 15%;           
+    left: 50%;           
+    width: clamp(150px, 90vw, 800px);
+    height: auto;        
+    transform: translate(-50%, 0);
+    object-fit: contain;
+    z-index: 0;         
+}
+
+
+@media (max-width: 768px) {
+    .background-image-2 {
+        width: clamp(100px, 60vw, 600px); 
+        top: 5%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .background-image-2 {
+        width: clamp(80px, 50vw, 400px); 
+        top: 3%; 
+    }
+}
+
+.content-wrapper-2 {
+    position: relative;
+    z-index: 1;        
+    text-align: center;  
+    max-width: 600px;    
+    margin: 0 auto;      
+}
+
+
+
+.family-image-2 {
+    width: clamp(100px, 70vw, 500px); 
+    margin-top: 20%; 
+    left: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; 
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 1; 
+}
+
+.family-image-2.visible {
+    opacity: 1; 
+}
+
+
+@media (max-width: 768px) {
+    .family-image-2 {
+        margin-top: 15%;
+        left: 35%; 
+        width: clamp(80px, 30vw, 400px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .family-image-2 {
+        margin-top: 10%; 
+        left: 10%; 
+        width: clamp(60px, 40vw, 200px); 
+    }
+}
+
+.content-text-2 h1 {
+    font-size: clamp(1.5rem, 7vw, 7rem);
+    color: #ffffff;
+    text-align: center;
+    margin-left: 20rem;
+    position: absolute; 
+    top: 11%; 
+    transform: translateX(-50%);
+    z-index: 5; 
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
+    opacity: 0; 
+    transition: opacity 1s ease, left 1s ease; 
+}
+
+.content-text-2 h1.visible {
+    opacity: 1;
+    animation: slideInText 1s ease forwards;
+}
+
+
+@media (max-width: 768px) {
+    .content-text-2 h1 {
+        font-size: clamp(1.2rem, 5vw, 5rem); 
+        top: 4%; 
+        margin-left: 12rem; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content-text-2 h1 {
+        font-size: clamp(1rem, 4vw, 3rem);
+        top: 5%;
+        margin-left: 2rem; 
+        margin-right: 2rem; 
+    }
+}
+
+.content-text-2 p {
+    font-size: clamp(1rem, 5vw, 2rem); 
+    color: #ffffff;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 120px; 
+    text-align: center; 
+    font-weight: bold; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+    line-height: 1.5; 
+    opacity: 0; 
+    transition: opacity 1s ease, transform 1s ease; 
+    z-index: 1; 
+}
+
+.content-text-2 p.visible {
+    opacity: 1; 
+}
+
+
+@media (max-width: 768px) {
+    .content-text-2 p {
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem); 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content-text-2 p {
+        font-size: clamp(0.8rem, 2vw, 1.2rem); 
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper-2 {
+        padding: 10px;
+    }
+
+    .family-image-2 {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-text-2 h1 {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    .content-text-2 p {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+}
+
+
+
+
+
+/* Bagian 4 buah keterangan */
+.info-section {
+    padding: 60px; 
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+.info-section > div {
+    border-radius: 30px;
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.info-item-1, .info-item-3 {
+    background: linear-gradient(to right, #51B6FF, rgba(59, 130, 246, 0));
+    width: 90%;
+    flex-direction: row; 
+    opacity: 0; 
+    transition: opacity 3s ease, left 3s ease; 
+}
+
+
+
+.info-item-2, .info-item-4 {
+    background: linear-gradient(to left, #51B6FF, rgba(59, 130, 246, 0));
+    margin-left: auto;
+    width: 90%;
+    flex-direction: row-reverse; 
+    opacity: 0; 
+    transition: opacity 3s ease, left 3s ease; 
+}
+
+.info-item-2.visible, .info-item-4.visible,
+.info-item-1.visible, .info-item-3.visible {
+    opacity: 1; 
+    animation: slideInText 0s ease forwards; 
+}
+
+
+.info-section img {
+    width: 200px;
+    height: 240px; 
+    border-radius: 20px; 
+    object-fit: cover;
+}
+
+
+.info-section > div > div {
+    display: flex;
+    flex-direction: column; 
+}
+
+.gabungan1 {
+    padding-right: 12rem;
+}
+
+.gabungan2 {
+    padding-left: 13rem;
+}
+.info-section h2 {
+    margin-left: 20px;
+    color: #ffffff;
+    font-size: 28px; 
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.info-section p {
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 17px; 
+    line-height: 1.8;
+    margin: 0;
+    padding: 0 20px; 
+}
+
+
+.info-section > div > div {
+    flex: 1;
+}
+
+
+@media (max-width: 768px) {
+    .gabungan1, .gabungan2 {
+        padding: 0%;
+    }
+    .info-section {
+        padding: 30px; 
+    }
+
+    .info-section > div {
+        flex-direction: column;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .info-item-2, .info-item-4 {
+        flex-direction: column-reverse; 
+    }
+
+    .info-section img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .info-section h2 {
+        font-size: 22px; 
+    }
+
+    .info-section p {
+        font-size: 16px; 
+        padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+/* ................................................................................. */
+/* ............................Container3.......................................... */
+
+.container-3 {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+    background-color: #29324B;
+    overflow: hidden;
+    z-index: -1; 
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Efek lingkaran gradasi biru di kiri atas */
+.container-3::before {
+    content: '';
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, #84D4FF, transparent 70%);
+    border-radius: 50%;
+    top: 60vw; 
+    left: -20vw;
+    filter: blur(15vw); 
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+/* Efek lingkaran gradasi ungu di kanan bawah */
+.container-3::after {
+    content: '';
+    position: absolute;
+    width: 60vw; 
+    height: 60vw;
+    background: radial-gradient(circle, #FF84D4, transparent 70%);
+    border-radius: 50%;
+    top: 60vw;
+    right: -20vw;
+    filter: blur(15vw); /* Blur responsif */
+    animation: glowEffect 8s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+
+.container-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px 0;
+
+}
+
+.container-3 h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+.circle-1 {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom , #1A2131,#1C2334, #28324B);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle-row {
+    display: flex;
+    justify-content: center;
+    gap: 10rem; 
+    margin-top: 10px; 
+}
+
+.circle-2, .circle-3 {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom , #1A2131,#1C2334, #28324B);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle span {
+    font-size: 32px;
+}
+
+.circle-1 span {
+    font-size: 60px;
+
+}
+.circle-1 p {
+    margin-top: 15px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle-2 h3{
+    font-size: 20px;
+    color: #51B6FF;
+    margin-bottom: 10px;
+}
+
+.circle-2 span {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.circle-2 p {
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle-3 span {
+    font-size: 43px;
+    margin-top: 20px;
+}
+
+.circle-3 p{
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+.circle-content-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+}
+
+.circle-content-3 img {
+    margin-top: 20px;
+    width: 30%; 
+    height: 40%;
+    object-fit: contain; 
+}
+
+
+/*3 MASMASKUWENTER */
+.seven {
+    position: relative;         
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;        
+    justify-content: center;   
+    text-align: center;         
+    gap: 10px;                 
+}
+
+.seven img {
+    position: absolute;         
+    height: auto;               
+}
+
+/* Animasi buram ke jelas untuk .seven-image */
+@keyframes spawnBlurToClear {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+/* Animasi dari bawah ke atas untuk .anggota-image */
+@keyframes spawnFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek untuk .seven-image */
+.seven-image {
+    margin-top: 26rem;
+    width: 1000px;
+    z-index: 0;
+    opacity: 0; 
+    transition: opacity 1s ease-out; 
+}
+
+/* Efek untuk .anggota-image */
+.anggota-image {
+    margin-top: 95rem;
+    align-items: center;
+    width: 1300px;
+    z-index: 1;
+    opacity: 0; 
+    transition: opacity 1s ease-out; 
+}
+
+/* Kelas .visible menambahkan animasi ketika elemen muncul */
+.seven-image.visible {
+    animation: spawnBlurToClear 2s ease-out forwards;
+    opacity: 1; 
+}
+
+.anggota-image.visible {
+    animation: spawnFromBottom 1s ease-out forwards; 
+    opacity: 1; 
+}
+
+.seven-text-end h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e3dddd;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-out; 
+}
+
+.seven-text-end h1.visible {
+    animation: spawnFromBottom 1s ease-out forwards; 
+    opacity: 1; 
+}
+
+
+
+
+/* ................................................................................. */
+/* ............................Container4.......................................... */
+
+.container-4 {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #29324B;
+    font-weight: bold;
+}
+
+.invitation-card-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1E2741;
+    border-radius: 20px;
+    padding: 40px 20px;
+    width: 650px;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 
+        0 4px 60px 0 rgba(0, 0, 0, 0.4);
+    opacity: 0; 
+    transition: opacity 1s ease-out; 
+    }
+    
+.invitation-card-4.visible {
+        animation: spawnFromBottom 1s ease-out forwards; 
+        opacity: 1; 
+    }
+
+/* Efek inner light dan shadow */
+.invitation-card-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px; 
+    background: linear-gradient(140deg, 
+        rgba(255, 255, 255, 0.2),  
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(0, 0, 0, 0.1) 75%,
+        rgba(0, 0, 0, 0.2)         
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 8px 9px) content-box, 
+        linear-gradient(#fff 8px 9px);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+.invitation-card-4::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 21px;
+    padding: 1px;
+    background: linear-gradient(140deg,
+        rgba(255, 255, 255, 0.1),  
+        rgba(0, 0, 0, 0.1)         
+    );
+    pointer-events: none;
+}
+
+.logo-section-4 .logo-4 {
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+
+.text-section-4 h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-section-4 p {
+    font-size: 1.4rem;
+    margin: 5px 0 15px;
+    color: #dcdcdc;
+    margin-bottom: 30px;
+}
+
+.enroll-button-4 {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #0b162a;
+    font-size: 1.4rem;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.enroll-button-4:hover {
+    background-color: #0b162a; 
+    color: #ffffff; 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.enroll-button-4:active {
+    transform: translateY(2px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
