@@ -48,4 +48,8 @@ class TheBoys extends Controller {
     public function userpostdetails() {
         // $this->
     }
+
+    public function memberdetail() {
+        $this->view('The_Boys/memberdetail');
+    }
 }

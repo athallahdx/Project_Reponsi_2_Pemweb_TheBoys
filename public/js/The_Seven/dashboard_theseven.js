@@ -1,7 +1,12 @@
 const bodyElement = document.getElementsByTagName('body')[0];
 const assetsImg = bodyElement.getAttribute('data-assets-img');
-console.log(assetsImg);
+
+// Set the background image
 bodyElement.style.backgroundImage = `url('${assetsImg}The_Seven/DASHBOARD/dashboard2_bgheader.png')`;
+
+// Set additional background styles
+bodyElement.style.backgroundRepeat = 'no-repeat';
+bodyElement.style.backgroundPosition = 'center top';
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');

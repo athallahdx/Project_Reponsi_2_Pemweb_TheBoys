@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login The Seven</title>
-    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Seven/community2_theseven.css">
+    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Seven/community_theseven.css">
 </head>
 <body data-assets-img="<?= ASSETSIMG ?>">
     <nav class="navbar">
@@ -17,7 +17,7 @@
         <div class="menu-overlay"></div>
         <ul class="nav-links">
             <li><a href="<?= BASEURL ?>TheSeven/Home">HOME</a></li>
-            <li><a href="<?= BASEURL ?>TheSeven/Community">COMMUNITY</a></li>
+            <li><a href="<?= BASEURL ?>TheSeven/Community" class="active">COMMUNITY</a></li>
             <li><a href="<?= BASEURL ?>TheSeven/Dashboard">DASHBOARD</a></li>
         </ul>
         <div class="profile-container">
@@ -27,10 +27,13 @@
     </nav>
 
     <section class="container-1">
-        <!-- Sidebar kiri -->
         <div class="sidebar">
-            <a href="postingan.html" class="your-posts">
-                <img src="<?= ASSETSIMG ?>The_Seven/COMMUNITY/community2_logo.png" alt="Your Posts">
+            <a href="<?= BASEURL ?>TheSeven/Community" class="Home2">
+                <img src="<?= ASSETSIMG?>The_Seven/COMMUNITY/community2_logo3.png" alt="Home2">
+                <span>Home</span>
+            </a>
+            <a href="<?= BASEURL ?>TheSeven/UserPost" class="your-posts">
+                <img src="<?= ASSETSIMG?>The_Seven/COMMUNITY/community2_logo.png" alt="Your Posts">
                 <span>Your Posts</span>
             </a>
         </div>
@@ -96,7 +99,7 @@
     </section>
     
     
-    <script src="<?= ASSETSJS ?>The_Seven/community2_theseven.js"></script>
+    <script src="<?= ASSETSJS ?>The_Seven/community_theseven.js"></script>
     
 </body>
 </html>

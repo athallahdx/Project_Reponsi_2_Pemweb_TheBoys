@@ -287,7 +287,7 @@ body {
 }
 
 /* Input */
-.registration-content .password, .nickname-2 {
+.registration-content .password, .username {
     width: 90%; 
     gap:10px;
     padding: 5px;
@@ -359,10 +359,3 @@ body {
     color: #ffffff; /* Warna teks */
     border-radius: 12px;
 }
-
-
-
-
-
-
-

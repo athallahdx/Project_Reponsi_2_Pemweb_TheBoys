@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Seven</title>
-    <link rel="stylesheet" href="<?=ASSETSCSS?>The_Seven/home2_theseven.css">
+    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Seven/home_theseven.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="hamburger" onclick="toggleMenu()" onmouseover="hoverMenu()" onmouseleave="resetMenu()">
-            &#9776; <!-- Simbol hamburger -->
+            &#9776; 
         </div>
         <div class="logo-container">
             <img src="<?= ASSETSIMG ?>The_Seven/home2_logonavbar.png" alt="The Seven Logo" class="logo">
+            <a href="<?= BASEURL ?>Home/Index">
+                <img src="<?= ASSETSIMG ?>The_Seven/home2_beranda.png" alt="Beranda" class="logo-2">
+            </a>
         </div>
         <div class="menu-overlay"></div>
         <ul class="nav-links">
-            <li><a href="<?= BASEURL ?>TheSeven/Home">HOME</a></li>
+            <li><a href="<?= BASEURL ?>TheSeven/Index" class="active">HOME</a></li>
             <li><a href="<?= BASEURL ?>TheSeven/Community">COMMUNITY</a></li>
             <li><a href="<?= BASEURL ?>TheSeven/Dashboard">DASHBOARD</a></li>
         </ul>
-        <div class="profile-container">
-            <img src="<?= ASSETSIMG ?>The_Seven/home2_profilnavbar.png" alt="Profile" class="profile-pic">
-            <span class="nickname">{Nickname}</span>
-        </div>
+        <a href="<?= BASEURL ?>TheSeven/UserProfile" class="link-profile">
+            <div class="profile-container">
+                <img src="<?= ASSETSIMG ?>The_Seven/home2_profilnavbar.png" alt="Profile" class="profile-pic">
+                <span class="nickname">{Nickname}</span>
+            </div>
+        </a>
     </nav>
 
     <section class="container-1">
@@ -138,11 +143,13 @@
                 <h2>THE SEVEN</h2>
                 <p>INVITATION CARD</p>
             </div>
-            <a href="<?= BASEURL ?>TheSeven/Register"><button class="enroll-button-4">ENROLL</button></a>
+            <a href="<?= BASEURL ?>TheSeven/Register">
+                <button class="enroll-button-4">ENROLL</button>
+            </a>
         </div>
     </section>
     
 
-    <script src="<?= ASSETSJS ?>The_Seven/home2_theseven.js"></script>
+    <script src="<?= ASSETSJS ?>The_Seven/home_theseven.js"></script>
 </body>
 </html>
