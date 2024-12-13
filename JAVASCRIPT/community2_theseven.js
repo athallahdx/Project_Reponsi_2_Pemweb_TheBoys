@@ -23,33 +23,58 @@ function resetMenu() {
 
 
 
-document.getElementById("post-button").addEventListener("click", function () {
-    const postInput = document.getElementById("post-input");
-    const postsContainer = document.getElementById("posts-container");
 
-    // Ambil teks dari input
-    const postText = postInput.value.trim();
-    if (postText === "") return; // Jangan posting jika kosong
 
-    // Buat elemen waktu sekarang
-    const currentTime = new Date();
-    const timeString = `Just now`;
+const fileInput = document.getElementById('file-input');
+const imageTrigger = document.getElementById('image-trigger');
+const postButton = document.getElementById('post-button');
 
-    // Buat elemen postingan baru
-    const newPost = document.createElement("div");
-    newPost.classList.add("post");
-    newPost.innerHTML = `
-        <img src="../../ASSET/THESEVEN/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-2">
-        <div class="post-content">
-            <span class="username">Your Name</span>
-            <span class="post-time">${timeString}</span></br></br>
-            <p>${postText}</p>
-        </div>
-    `;
 
-    // Tambahkan postingan baru ke container
-    postsContainer.prepend(newPost);
-
-    // Kosongkan input
-    postInput.value = "";
+imageTrigger.addEventListener('click', function () {
+    fileInput.click();
 });
+
+// Validasi file setelah dipilih
+fileInput.addEventListener('change', function () {
+    const file = fileInput.files[0];
+
+    if (file && file.type === 'image/png') {
+        postButton.disabled = false; 
+        alert(`File "${file.name}" dipilih!`);
+    } else {
+        postButton.disabled = true; 
+        alert('Hanya file PNG yang diperbolehkan!');
+    }
+});
+
+postButton.addEventListener('click', function () {
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        alert(`Mengirim file: ${file.name}`);
+    }
+});
+
+
+function toggleComments(button) {
+    var postId = button.getAttribute('data-post-id');
+    
+    var hiddenComments = document.querySelectorAll(`#post${postId} .comment-section[style="display: none;"]`);
+    
+    if (hiddenComments.length > 0) {
+        hiddenComments.forEach(function(comment) {
+            comment.style.display = 'block'; 
+        });
+
+        button.textContent = 'Sembunyikan';  
+    } else {
+        var allComments = document.querySelectorAll(`#post${postId} .comment-section`);
+        
+        allComments.forEach(function(comment) {
+            if (comment.style.display === 'block') {
+                comment.style.display = 'none';  
+            }
+        });
+
+        button.textContent = 'Selengkapnya'; 
+    }
+}

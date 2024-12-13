@@ -48,23 +48,104 @@
                 <div class="input-container">
                     <input type="text" id="post-input" placeholder="What's in your mind?" >
                     <div class="input-footer">
-                        <img src="../../ASSET/THEBOYS/COMMUNITY/community2_logo2.png" alt="Logo" class="image">
-                        <button id="post-button">Post</button>
-                    </div>
+                        <img src="../../ASSET/THEBOYS/COMMUNITY/community2_logo2.png" alt="Logo" class="image" id="image-trigger">
+                        <input type="file" id="file-input" accept="image/png" style="display: none;">
+                        <button id="post-button" disabled>Post</button>
+                    </div>                    
                 </div>
             </div>
             
             <div class="posts" id="posts-container">
                 <!-- Dummy Posts -->
-                <div class="post">
+                <div class="post" id="post1">
                     <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-2">
                     <div class="post-content">
                         <span class="username">Athallah</span>
                         <span class="post-time">2h</span><br><br>
+                        <img src="../../ASSET/THEBOYS/home_whiteblack.png" alt="Profile" class="dummy-image">
                         <p>HOMELANDER ASLINYA SAMPAH, BARUSAN LIAT DIA BUNUH WARGA SIPIL</p>
+
+                        <div class="comment-section" id="comments1">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Bangun</span>
+                                        <span class="post-time-2">2h</span>
+                                    </div>
+                                    <p>Iya benar aku juga lihat</p>
+                                </div>
+                            </div>
+                        </div>                    
+                        
+                        <div class="comment-section" id="comments2">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Nurul</span>
+                                        <span class="post-time-2">2h</span>
+                                    </div>
+                                    <p>Iya benar aku juga lihat bre</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section" id="comments3">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Nafri</span>
+                                        <span class="post-time-2">2h</span>
+                                    </div>
+                                    <p>Setuju</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section" id="comments4" style="display: none;">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Nafri</span>
+                                        <span class="post-time-2">2h</span>
+                                    </div>
+                                    <p>Horassss</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section" id="comments5" style="display: none;">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Alex</span>
+                                        <span class="post-time-2">2h</span>
+                                    </div>
+                                    <p>SOK ASIK HOMELANDER</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="toggle-comments-btn" data-post-id="1" onclick="toggleComments(this)">Selengkapnya</button>
+
+                        <div class="input-container-2">
+                            <input type="text" id="post-input-2" placeholder="Your comment...." >
+                            <div class="input-footer">
+                                <input type="file" id="file-input" accept="image/png" style="display: none;">
+                                <button id="post-button" disabled>Post</button>
+                            </div>                    
+                        </div>
                     </div>
                 </div>
-                <div class="post">
+
+
+
+
+                <div class="post" id="post2">
                     <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-2">
                     <div class="post-content">
                         <span class="username">Irfan Romadhon</span>
@@ -73,9 +154,36 @@
                         <p>F*CK THE SEVEN</p>
                         <p>F*CK THE SEVEN</p>
                         <p>F*CK THE SEVEN</p>
+
+                        <div class="comment-section" id="comments1">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Alex</span>
+                                        <span class="post-time-2">5h</span>
+                                    </div>
+                                    <p>Realllll</p>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <button class="toggle-comments-btn" data-post-id="2" onclick="toggleComments(this)">Selengkapnya</button>
+
+                        <div class="input-container-2">
+                            <input type="text" id="post-input-2" placeholder="Your comment...." >
+                            <div class="input-footer">
+                                <input type="file" id="file-input" accept="image/png" style="display: none;">
+                                <button id="post-button" disabled>Post</button>
+                            </div>                    
+                        </div>
                     </div>
                 </div>
-                <div class="post">
+
+
+
+
+                <div class="post" id="post3">
                     <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-2">
                     <div class="post-content">
                         <span class="username">Arga</span>
@@ -86,6 +194,29 @@
                             ia bersyukur, karena (ia mengetahui) bahwa hal tersebut merupakan hal yang terbaik untuknya. Dan jika ia tertimpa musibah, ia bersabar,
                             karena ia mengetahui bahwa hal tersebut merupakan hal terbaik bagi dirinya." (HR Muslim)
                         </p>
+
+                        <div class="comment-section" id="comments1">
+                            <div class="comment">
+                                <img src="../../ASSET/THEBOYS/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-4">
+                                <div class="comment-content">
+                                    <div>
+                                        <span class="username-2">Agus</span>
+                                        <span class="post-time-2">9h</span>
+                                    </div>
+                                    <p>Masyallah Habibi</p>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <button class="toggle-comments-btn" data-post-id="3" onclick="toggleComments(this)">Selengkapnya</button>
+
+                        <div class="input-container-2">
+                            <input type="text" id="post-input-2" placeholder="Your comment...." >
+                            <div class="input-footer">
+                                <input type="file" id="file-input" accept="image/png" style="display: none;">
+                                <button id="post-button" disabled>Post</button>
+                            </div>                    
+                        </div>
                     </div>
                 </div>
             </div>
