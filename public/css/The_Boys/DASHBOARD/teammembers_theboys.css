@@ -189,7 +189,6 @@ a {
     left: 0;
     width: 100%; 
     height: 100%; 
-    background: url("../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/bercak_theboys.png") no-repeat center;
     background-size: cover;
     z-index: 1; 
 }
@@ -288,7 +287,6 @@ a {
     left: 0;
     width: 100%; 
     height: 100%; 
-    background: url("../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/bercak_theboys.png") no-repeat center;
     background-size: cover;
     z-index: 1; 
 }
@@ -377,9 +375,14 @@ a {
     left: 0;
     width: 100%; 
     height: 100%; 
-    background: url("../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/bercak_theboys.png") no-repeat center;
     background-size: cover;
     z-index: 1; 
+}
+
+.memberImage img{
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .image-overlay-3 h1, .image-overlay-3 h3 {
@@ -467,7 +470,6 @@ a {
     left: 0;
     width: 100%; 
     height: 100%; 
-    background: url("../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/bercak_theboys.png") no-repeat center;
     background-size: cover;
     z-index: 1; 
 }
@@ -565,7 +567,6 @@ a {
     left: 0;
     width: 100%; 
     height: 100%; 
-    background: url("../../../ASSET/THEBOYS/DASHBOARD/TEAM_MEMBERS/bercak_theboys.png") no-repeat center;
     background-size: cover;
     z-index: 1; 
 }

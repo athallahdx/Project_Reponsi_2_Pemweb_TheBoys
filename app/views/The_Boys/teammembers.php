@@ -1,3 +1,11 @@
+<?php
+    $firstMember = $data['members'][0];
+    unset($data['members'][0]);
+
+    $first_half = array_slice($data['members'], 0, count($data['members']) / 2);
+    $second_half = array_slice($data['members'], count($data['members']) / 2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +24,14 @@
         </div>
         <div class="menu-overlay"></div>
         <ul class="nav-links">
-            <li><a href="<?= BASEURL ?>TheBoys/Index" class="active">HOME</a></li>
+            <li><a href="<?= BASEURL ?>TheBoys/Index">HOME</a></li>
             <li><a href="<?= BASEURL ?>TheBoys/Community">COMMUNITY</a></li>
-            <li><a href="<?= BASEURL ?>TheBoys/Dashboard">DASHBOARD</a></li>
+            <li><a href="<?= BASEURL ?>TheBoys/Dashboard" class="active">DASHBOARD</a></li>
         </ul>
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+            <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['user']['image'];?>" alt="Profile" class="profile-pic">
+            <span class="username"><?= htmlspecialchars($data['user']['username']); ?></span>
             </div>
         </a>
     </nav>
@@ -38,80 +46,70 @@
         <p>LEADER</p>
 
         <div class="center-container">
-            <a href="TEAMMEMBERS/billybutcher.html">
+            <a href="<?= BASEURL ?>TheBoys/memberdetail/<?= $firstMember['member_id']; ?>">
                 <div class="image-container-1">
                     <div class="image-overlay-1">
                         <h1>WANTED</h1>
                         <h3>LIVE OR DEAD</h3>
-                        <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/Billy_Butcher.png" alt="Billy Butcher">
-                        <div class="text-overlay-1">
-                            <h2>Billy Butcher</h2>
-                            <p>Leader</p>
+                        <div class="memberImage">
+                            <img src="<?= BASEURL ?>uploads/The_Boys/members/<?=$firstMember['image_path'];?>" alt="Billy Butcher">
+                        </div>
+                        <div class="text-overlay-1">     
+                            <h2><?= $firstMember['nickname']; ?></h2>
+                            <p><?= $firstMember['position']; ?></p>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
 
-        
-            <!-- New images -->
-            <div class="image-row">
-                <a href="TEAMMEMBERS/hunghiecampbell.html">
-                    <div class="image-container-2">
-                        <div class="image-overlay-2">
+        <!-- First image row -->
+        <div class="image-row">
+            <?php $index=2; ?>
+            <?php foreach ($first_half as $member): ?>
+                <a href="<?= BASEURL ?>TheBoys/memberdetail/<?= $member['member_id']; ?>">
+                    <div class="image-container-<?= $index; ?>">
+                        <div class="image-overlay-<?= $index; ?>">
                             <h1>WANTED</h1>
                             <h3>LIVE OR DEAD</h3>
-                            <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/Hunghie_Campbell.png" alt="Hunghie Campbell">
-                            <div class="text-overlay-2">
-                                <h2>Hunghie Campbell</h2>
-                                <p>Tech and Computer</p>
+                            <div class="memberImage">
+                                <img src="<?= UPLOADS ?>The_Boys/members/<?= $member['image_path']; ?>" alt="<?= $member['nickname']; ?>">
                             </div>
-                        </div>
-                    </div>
-                </a>                
-                <a href="TEAMMEMBERS/mothersmilk.html">
-                    <div class="image-container-3">
-                        <div class="image-overlay-3">
-                            <h1>WANTED</h1>
-                            <h3>LIVE OR DEAD</h3>
-                            <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/Mother’s_Milk.png" alt="Mother's Milk">
-                            <div class="text-overlay-3">
-                                <h2>Mother's Milk</h2>
-                                <p>Investigator and Medic</p>
+                            <div class="text-overlay-<?= $index; ?>">
+                                <h2><?= $member['nickname']; ?></h2>
+                                <p><?= $member['position']; ?></p>
                             </div>
                         </div>
                     </div>
                 </a>
-                
-            </div>      
+                <?php $index++; ?>
+            <?php endforeach; ?>
+        </div>
 
-            <div class="image-row-2">
-                <a href="TEAMMEMBERS/frenchie.html">
-                    <div class="image-container-4">
-                        <div class="image-overlay-4">
+        <!-- Second image row -->
+        <div class="image-row-2">
+            <?php foreach ($second_half as $member): ?>
+                <a href="<?= BASEURL ?>TheBoys/memberdetail/<?= $member['member_id']; ?>">
+                    <div class="image-container-<?= $index; ?>">
+                        <div class="image-overlay-<?= $index; ?>">
                             <h1>WANTED</h1>
                             <h3>LIVE OR DEAD</h3>
-                            <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/Frenchie.png" alt="Frenchie">
-                            <div class="text-overlay-4">
-                                <h2>Frenchie</h2>
-                                <p>Weapons and Explosives</p>
+                            <div class="memberImage">
+                                <img src="<?= UPLOADS ?>The_Boys/members/<?= $member['image_path']; ?>" alt="<?= $member['nickname']; ?>">
+                            </div>
+                            <div class="text-overlay-<?= $index; ?>">
+                                <h2><?= $member['nickname']; ?></h2>
+                                <p><?= $member['position']; ?></p>
                             </div>
                         </div>
                     </div>
-                </a>    
-                <a href="TEAMMEMBERS/kimikomiyashiro.html">
-                    <div class="image-container-5">
-                        <div class="image-overlay-5">
-                            <h1>WANTED</h1>
-                            <h3>LIVE OR DEAD</h3>
-                            <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/Kimiko_Miyashiro.png" alt="Kimiko Miyashiro">
-                            <div class="text-overlay-5">
-                                <h2>Kimiko Miyashiro</h2>
-                                <p>Muscle</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>                            
+                </a>
+                <?php $index++; ?>
+            <?php endforeach; ?>
+        </div>
+
+
+                         
     </section>
 
 

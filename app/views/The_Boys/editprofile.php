@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Boys</title>
-    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/editprofile_theboys.css">
+    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/editprofile_theboys.css?v=1.0">
 </head>
-<body data-assets-img="<?= ASSETSIMG ?>">
+<body data-assets-img="<?= ASSETSIMG ?>" data-base-url="<?= BASEURL ?>">
 <nav class="navbar">
         <div class="logo-container">
             <img src="<?= ASSETSIMG ?>The_Boys/home_logonavbar.png" alt="The BOYS Logo" class="logo">
@@ -23,7 +23,7 @@
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <span class="username"><?= htmlspecialchars($data['user']['username']); ?></span>
             </div>
         </a>
     </nav>
@@ -37,52 +37,57 @@
 
         <div class="content">
             <div class="form-container">
-                <div class="image-container">
-                    <div class="image-overlay">
-                        <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/grid_theboys.png" alt="Overlay" class="image-top">
-                    </div>
-                    <div class="image-box">
-                        <img id="avatar-preview" src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/fotoprofile.png" alt="Profile" class="image-main">
-                    </div>
-                </div>
-
-                <div class="avatar-container">
-                    <label for="avatar" id="choose-file-label">Choose File</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*">
-                </div>
-                
-
-                <div class="input-fields">
-                    <div class="form-row">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username">
+                <!-- Begin Form -->
+                <form action="<?= BASEURL ?>TheBoys/updateProfile" method="POST" enctype="multipart/form-data">
+                    <div class="image-container">
+                        <div class="image-overlay">
+                            <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/grid_theboys.png" alt="Overlay" class="image-top">
+                        </div>
+                        <div class="image-box">
+                            <img id="avatar-preview" src="<?= BASEURL . "uploads/The_Boys/userprofile/" . $data['userprofile']['image_path'] ?>" alt="Profile" class="image-main">
+                        </div>
                     </div>
 
-                    <div class="form-row">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" name="fullname">
+                    <div class="avatar-container">
+                        <label for="avatar" id="choose-file-label">Choose File</label>
+                        <input type="file" id="avatar" name="avatar" accept="image/*">
                     </div>
 
-                    <div class="form-row">
-                        <label for="age">Age</label>
-                        <input type="number" id="age" name="age">
+                    <div class="input-fields">
+                        <div class="form-row">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" value="<?= $data['user']['username'] ?>">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" value="<?= $data['user']['fullname'] ?>">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" value="<?= $data['userprofile']['age'] ?>">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="ethnicity">Ethnicity</label>
+                            <input type="text" id="ethnicity" name="ethnicity" value="<?= $data['userprofile']['ethnicity'] ?>">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="profile_bio">Bio Description</label>
+                            <input type="text" id="profile_bio" name="profile_bio" value="<?= $data['userprofile']['profile_bio'] ?>">
+                        </div>
                     </div>
 
-                    <div class="form-row">
-                        <label for="ethnicity">Gender</label>
-                        <input type="text" id="ethnicity" name="ethnicity">
+                    <div class="button-container">
+                        <button type="submit" class="edit-button">Save</button>
                     </div>
-
-                    <div class="form-row">
-                        <label for="power">Bio Description</label>
-                        <input type="text" id="power" name="power">
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <button class="edit-button">Save</button>
-                </div>
+                </form>
+                <!-- End Form -->
             </div>
+        </div>
+
 
             <!-- Success Message -->
             <div id="success-message">

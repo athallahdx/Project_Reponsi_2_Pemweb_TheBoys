@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login The Boys</title>
-    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/register_theboys.css?v1.0">
+    <title>Register The Boys</title>
+    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/register_theboys.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo-container">
             <img src="<?= ASSETSIMG ?>The_Boys/home_logonavbar.png" alt="The BOYS Logo" class="logo">
-            <a href="../../index.html">
+            <a href="<?= BASEURL ?>Home/Index">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_beranda.png" alt="Beranda" class="logo-2">
             </a>
         </div>
@@ -23,7 +23,7 @@
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <span class="nickname">username</span>
             </div>
         </a>
     </nav>
@@ -35,7 +35,6 @@
         <!-- Form Registrasi -->
         <div class="registration-form">
             <!-- Kotakan Gradasi -->
-
             <div class="header-form">
                 <img src="<?= ASSETSIMG ?>The_Boys/LOGIN/login_palahomelander.png" alt="Hero" class="hero-image">
                 <img src="<?= ASSETSIMG ?>The_Boys/LOGIN/login_teks.png" alt="The Seven Teks" class="teks-image">
@@ -45,7 +44,7 @@
             <!-- Konten Form -->
             <div class="registration-content">
                 <hr>
-                <form>
+                <form method="POST" action="<?= BASEURL ?>TheBoys/register" id="registerForm">
                     
                     <div class="input-container">
                         <label for="fullname">Full Name</label>
@@ -54,7 +53,7 @@
 
                     <div class="input-container">
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="username"class="username" required>
+                        <input type="text" id="username" name="username" class="username" required>
                     </div>
 
                     <div class="input-container">
@@ -81,5 +80,7 @@
             </div>
         </div>
     </section>
+
+    <script src="<?= ASSETSJS ?>The_Boys/register_theboys.js"></script>
 </body>
 </html>

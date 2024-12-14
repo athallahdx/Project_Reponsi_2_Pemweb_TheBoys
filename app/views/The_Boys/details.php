@@ -22,8 +22,13 @@
         </ul>
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <?php if (!isset($data['username'])): ?>
+                    <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['user']['image'];?>" alt="Profile" class="profile-pic">
+                    <span class="nickname">username</span>
+                <?php else: ?>
+                    <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
+                    <span class="nickname"><?= htmlspecialchars($data['username']); ?></span>
+                <?php endif; ?>
             </div>
         </a>
     </nav>

@@ -12,7 +12,7 @@
             <img src="<?= ASSETSIMG ?>The_Boys/home_logonavbar.png" alt="The BOYS Logo" class="logo">
             <a href="<?= BASEURL ?>Home/Index">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_beranda.png" alt="Beranda" class="logo-2">
-            </a>
+            </a>x
         </div>
         <div class="menu-overlay"></div>
         <ul class="nav-links">
@@ -22,8 +22,8 @@
         </ul>
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['user']['image'];?>" alt="Profile" class="profile-pic">
+                <span class="nickname"><?= htmlspecialchars($data['user']['username']); ?></span>
             </div>
         </a>
     </nav>

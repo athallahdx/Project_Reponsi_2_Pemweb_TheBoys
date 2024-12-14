@@ -22,8 +22,8 @@
         </ul>
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['image'];?>" alt="Profile" class="profile-pic">
+                <span class="username"><?= htmlspecialchars($data['username']); ?></span>
             </div>
         </a>
     </nav>
@@ -34,7 +34,7 @@
             <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/dashboard_logo.png" alt="Logo" class="dashboard-logo">
             <h1>WELCOME TO THE BOYS</h1>
             <h2>Your mission begins here. Access all the tools to dismantle the system.</h2>
-            <p>Hello, {nickname}! Welcome to the dirtiest fight of your life..<br>
+            <p>Hello, <?= htmlspecialchars($data['username']); ?>! Welcome to the dirtiest fight of your life..<br>
                 All the tools, intel, and resources you need to expose the truth and fight back are right here.</p>
         </header>
     

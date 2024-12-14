@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Seven</title>
-    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/userprofile_theboys.css?v=1.0">
+    <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/userprofile_theboys.css">
 </head>
 <body data-assets-img="<?= ASSETSIMG ?>">
 <nav class="navbar">
@@ -22,8 +22,8 @@
         </ul>
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
-                <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['userprofile']['image_path'];?>" alt="Profile" class="profile-pic">
+                <span class="username"><?= htmlspecialchars($data['user']['username']); ?></span>
             </div>
         </a>
     </nav>
@@ -42,31 +42,31 @@
                         <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/TEAM_MEMBERS/grid_theboys.png" alt="Overlay" class="image-top">
                     </div>
                     <div class="image-box">
-                        <img src="<?= ASSETSIMG ?>The_Boys/DASHBOARD/fotoprofile.png" alt="A-Train" class="image-main">
+                        <img src="<?= BASEURL?>uploads/The_Boys/userprofile/<?= $data['userprofile']['image_path'];?>" alt="userImage" class="image-main">
                     </div>
                 </div>
 
                 <div class="text-container">
-                    <h3>{username}</h3>
+                    <h3><?= $data['user']['username'] ?></h3>
                     <div class="details">
                         <dl>
                             <dt>Full Name</dt>
-                            <dd>{full name}</dd>
+                            <dd><?= $data['user']['fullname'] ?></dd>
             
                             <dt>Age</dt>
-                            <dd>{age}</dd>
+                            <dd><?= $data['userprofile']['age'] ?></dd>
             
                             <dt>Gender</dt>
-                            <dd>{gender}</dd>
+                            <dd><?= $data['userprofile']['ethnicity'] ?></dd>
 
                             <dt>Bio Description</dt>
-                            <dd>{bio desc}</dd>
+                            <dd>"<?= $data['userprofile']['profile_bio'] ?>"</dd>
                         </dl>
                     </div>
                 </div>
 
                 <div class="button-container">
-                    <a href="<?= BASEURL ?>TheBoys/editprofile">
+                    <a href="<?= BASEURL ?>TheBoys/editprofile/<?= $data['userprofile']['userprofile_id']; ?>">
                         <button class="edit-button">Edit Profile</button>
                     </a>
                 </div>

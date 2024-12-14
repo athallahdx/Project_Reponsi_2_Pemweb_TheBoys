@@ -1,65 +1,81 @@
-const bodyElement = document.getElementsByTagName('body')[0];
-const assetsImg = bodyElement.getAttribute('data-assets-img');
-console.log(assetsImg);
-overlay = document.getElementByClass('overlay');
-overlay.style.background = `url('${assetsImg}The_Boys/LOGIN/login_layer.png') no-repeat center center`;
+document.addEventListener("DOMContentLoaded", function() {
+    const usernameField = document.getElementById('username');
+    const emailField = document.getElementById('email');
+    const passwordField1 = document.getElementById('password1');
+    const passwordField2 = document.getElementById('password2');
+    const usernameError = document.getElementById('usernameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const passwordMatchError = document.getElementById('passwordMatchError');
+    
+    let isUsernameValid = false;
+    let isEmailValid = false;
+    let isPasswordValid = false;
+    let isPasswordMatchValid = false;
 
-// Fungsi untuk memulai Intersection Observer
-function setupObserver(selector) {
-    const element = document.querySelector(selector);
-    if (element) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, {
-            threshold: 0.5 
-        });
-        observer.observe(element);
-    }
-}
+    // Live validation for username
+    usernameField.addEventListener('input', function() {
+        let username = usernameField.value;
+        username = username.replace(/\s+/g, ''); // Remove spaces
+        usernameField.value = username;
 
-// Menyiapkan Intersection Observer untuk semua elemen
-setupObserver('.headline');
-setupObserver('.header-2');
-setupObserver('.image-1');
-setupObserver('.vaksin-text');
-setupObserver('.container-3 h2');
-setupObserver('.character-1');
-setupObserver('.character-2');
-setupObserver('.character-3');
-setupObserver('.character-4');
-setupObserver('.character-5');
-setupObserver('.theboys-card-4');
-
-// UNTUK MINI GAME...................................................
-
-function toggleImage(buttonId, imageId, imagePath1, imagePath2) {
-    document.getElementById(buttonId).addEventListener("click", function () {
-        const imageElement = document.getElementById(imageId);
-        const currentSrc = imageElement.src;
-
-        if (currentSrc.endsWith(imagePath1)) {
-            imageElement.src = imagePath2; 
+        const usernameRegex = /^[a-zA-Z0-9_]{1,30}$/;
+        if (!usernameRegex.test(username)) {
+            isUsernameValid = false;
         } else {
-            imageElement.src = imagePath1;
+            isUsernameValid = true;
         }
     });
-}
 
-// // Panggil fungsi toggleImage untuk setiap button dan image public\img\The_Boys\theseven_blacknoir2.png
-toggleImage("change-image-button", "character-image", `${assetsImg}/The_Boys/theseven_blacknoir2.png`, `${assetsImg}/The_Boys/theseven_blacknoir2.png`);
-toggleImage("change-image-button-2", "character-image-2", `${assetsImg}/The_Boys/theseven_atrain2.png`, `${assetsImg}/The_Boys/theseven_atrain2.png`);
-toggleImage("change-image-button-3", "character-image-3", `${assetsImg}/The_Boys/theseven_stormfront2.png`, `${assetsImg}/The_Boys/theseven_stormfront2.png`);
-toggleImage("change-image-button-4", "character-image-4", `${assetsImg}/The_Boys/theseven_thedeep2.png`, `${assetsImg}/The_Boys/theseven_thedeep2.png`);
-toggleImage("change-image-button-5", "character-image-5", `${assetsImg}/The_Boys/theseven_homelander2.png`, `${assetsImg}/The_Boys/theseven_homelander2.png`);
+    // Live validation for email
+    emailField.addEventListener('input', function() {
+        let email = emailField.value;
+        
+        // Convert email to lowercase and remove spaces
+        email = email.toLowerCase().replace(/\s+/g, '');
+        emailField.value = email;
 
-// Panggil fungsi toggleImage untuk setiap button dan image
-// toggleImage("change-image-button", "character-image", "../../img/The_Boys/theseven_blacknoir2.png", "../../img/The_Boys/theseven_blacknoir2.png");
-// toggleImage("change-image-button-2", "character-image-2", "../../img/The_Boys/theseven_atrain2.png", "../../img/The_Boys/theseven_atrain2.png");
-// toggleImage("change-image-button-3", "character-image-3", "../../img/The_Boys/theseven_stormfront2.png", "../../img/The_Boys/theseven_stormfront2.png");
-// toggleImage("change-image-button-4", "character-image-4", "../../img/The_Boys/theseven_thedeep2.png", "../../img/The_Boys/theseven_thedeep2.png");
-// toggleImage("change-image-button-5", "character-image-5", "../../img/The_Boys/theseven_homelander2.png", "../../img/The_Boys/theseven_homelander2.png");
+        // Regex for validating email
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            isEmailValid = false;
+        } else {
+            isEmailValid = true;
+        }
+    });
+
+    // Live validation for password
+    passwordField1.addEventListener('input', function() {
+        const password = passwordField1.value;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+        if (!passwordRegex.test(password)) {
+            isPasswordValid = false;
+        } else {
+            isPasswordValid = true;
+        }
+    });
+
+    // Check if passwords match
+    passwordField2.addEventListener('input', function() {
+        const password1 = passwordField1.value;
+        const password2 = passwordField2.value;
+
+        if (password1 !== password2) {
+            isPasswordMatchValid = false;
+        } else {
+            isPasswordMatchValid = true;
+        }
+    });
+
+//     // Optional: Add submit form validation (if needed)
+//     const registerForm = document.getElementById('registerForm');
+//     registerForm.addEventListener('submit', function(e) {
+//         // Prevent submission if there are validation errors
+//         if (!isUsernameValid || !isEmailValid || !isPasswordValid || !isPasswordMatchValid) {
+//             e.preventDefault();
+//             alert('Please fix the errors before submitting the form.');
+//         }
+//     });
+// });
+})

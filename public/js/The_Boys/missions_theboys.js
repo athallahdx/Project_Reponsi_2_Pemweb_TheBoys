@@ -8,120 +8,84 @@ bodyElement.style.backgroundImage = `url('${assetsImg}The_Boys/DASHBOARD/home_ba
 bodyElement.style.backgroundRepeat = 'no-repeat';
 bodyElement.style.backgroundPosition = 'center top';
 
+ // Get modal elements
+ const editModal = document.getElementById('editModal');
+ const editMissionId = document.getElementById('editMissionId');
+ const editMissionTitle = document.getElementById('editMissionTitle');
+ const editMissionDescription = document.getElementById('editMissionDescription');
+ const editDateTime = document.getElementById('editDateTime');
+ const editLocation = document.getElementById('editLocation');
+
+ // Open modal and populate form with data
+ document.querySelectorAll('.edit-btn').forEach(button => {
+     button.addEventListener('click', () => {
+         editMissionId.value = button.dataset.id;
+         editMissionTitle.value = button.dataset.title;
+         editMissionDescription.value = button.dataset.description;
+         editDateTime.value = button.dataset.datetime;
+         editLocation.value = button.dataset.location;
+
+         editModal.classList.remove('hidden');
+     });
+ });
+
+ // Close modal
+ document.getElementById('cancelEditBtn').addEventListener('click', () => {
+     editModal.classList.add('hidden');
+ });
+
+ // Optional: Close modal on outside click
+ window.addEventListener('click', event => {
+     if (event.target === editModal) {
+         editModal.classList.add('hidden');
+     }
+ });
+
 document.addEventListener("DOMContentLoaded", () => {
-    const addMissionBtn = document.getElementById("addMissionBtn");
+    const addMissionBtn = document.getElementById("addMissionBtn");  // Make sure this button exists
     const modal = document.getElementById("modal");
     const missionForm = document.getElementById("missionForm");
-    const missionTableBody = document.querySelector("#missionTable tbody");
     const modalTitle = document.getElementById("modalTitle");
-    const missionNameInput = document.getElementById("missionName");
-    const missionLocationInput = document.getElementById("missionLocation");
+    const missionTitleInput = document.getElementById("missionTitle");  // Corrected id to match HTML
+    const missionDescriptionInput = document.getElementById("missionDescription");  // Corrected id to match HTML
+    const dateTimeInput = document.getElementById("dateTime");  // Corrected id to match HTML
+    const locationInput = document.getElementById("location");  // Corrected id to match HTML
     const cancelBtn = document.getElementById("cancelBtn");
 
-    let editIndex = null;
-
-    // Dummy data
-    const missions = [
-        { name: "Bunuh A-Train", location: "Washington" },
-        { name: "Pembantaian Batalyon", location: "New York" },
-        // 4 dummy rows with empty data
-        { name: "", location: "" },
-        { name: "", location: "" },
-        { name: "", location: "" },
-        { name: "", location: "" }
-    ];
-
+    // Open modal when the button is clicked
     const openModal = (title) => {
         modalTitle.textContent = title;
-        missionNameInput.value = "";
-        missionLocationInput.value = "";
+        missionTitleInput.value = "";
+        missionDescriptionInput.value = "";
+        dateTimeInput.value = "";
+        locationInput.value = "";
         modal.classList.remove("hidden");
     };
 
+    // Close modal when the cancel button is clicked
     const closeModal = () => {
         modal.classList.add("hidden");
-        editIndex = null;
     };
 
-    const renderTable = () => {
-        [...missionTableBody.children].forEach((row) => row.remove());
-        missions.forEach((mission, index) => {
-            const row = document.createElement("tr");
-    
-            // Jika mission kosong, hanya tampilkan baris kosong
-            if (mission.name === "" && mission.location === "") {
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                `;
-            } else {
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${mission.name}</td>
-                    <td>${mission.location}</td>
-                    <td>
-                        <button class="edit-btn" data-index="${index}">Edit</button>
-                        <span class="divider">|</span>
-                        <button class="delete-btn" data-index="${index}">Delete</button>
-                    </td>
-                `;
-            }
-    
-            missionTableBody.appendChild(row);
+    // Event listener for the "Add Mission" button (make sure this button exists)
+    if (addMissionBtn) {
+        addMissionBtn.addEventListener("click", () => {
+            openModal("Add Mission");
         });
-    };
-    
+    }
 
-    addMissionBtn.addEventListener("click", () => {
-        openModal("Add Mission");
-    });
+    // Event listener for the cancel button to close the modal
+    if (cancelBtn) {
+        cancelBtn.addEventListener("click", () => {
+            closeModal();
+        });
+    }
 
-    cancelBtn.addEventListener("click", closeModal);
-
-    missionForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const name = missionNameInput.value.trim();
-        const location = missionLocationInput.value.trim();
-    
-        if (editIndex !== null) {
-            // Jika dalam mode edit, perbarui data di indeks yang sesuai
-            missions[editIndex] = { name, location };
-        } else {
-            // Cari baris kosong pertama untuk mengisi data baru
-            const emptyIndex = missions.findIndex(
-                (mission) => mission.name === "" && mission.location === ""
-            );
-            if (emptyIndex !== -1) {
-                // Isi data baru di baris kosong pertama
-                missions[emptyIndex] = { name, location };
-            } else {
-                // Jika tidak ada baris kosong, tambahkan data di akhir
-                missions.push({ name, location });
-            }
-        }
-    
-        renderTable();
+    // Prevent form from submitting and handle form submission if needed
+    missionForm.addEventListener("submit", (e) => {
+        // You can add form submission logic here (e.g., using AJAX)
+        console.log("Form submitted!");
+        // After submission, close the modal
         closeModal();
     });
-    
-
-    missionTableBody.addEventListener("click", (event) => {
-        const index = event.target.dataset.index;
-        if (event.target.classList.contains("edit-btn")) {
-            editIndex = index;
-            missionNameInput.value = missions[index].name;
-            missionLocationInput.value = missions[index].location;
-            openModal("Edit Mission");
-        } else if (event.target.classList.contains("delete-btn")) {
-            if (confirm("Are you sure you want to delete this mission?")) {
-                missions.splice(index, 1);
-                renderTable();
-            }
-        }
-    });
-
-    // Render the table initially with dummy data
-    renderTable();
 });

@@ -7,7 +7,6 @@
 body {
     font-family: Arial, sans-serif;
     background: #29324B;
-    background: url('../../../../ASSET/THEBOYS/DASHBOARD/home_background.png') no-repeat center top; 
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -175,7 +174,7 @@ h1 {
     align-items: flex-start;  
     gap: 80px; 
     margin-top: -75px;
-    margin-left: -95px;
+    margin-left: -140px;
 }
 .image-box {
     position: relative;

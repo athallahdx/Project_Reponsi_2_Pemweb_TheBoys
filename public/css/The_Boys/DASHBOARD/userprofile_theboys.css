@@ -162,7 +162,11 @@ h1 {
     margin-bottom: 50px;
 }
 
+
 .image-box {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     position: relative;
     width: 260px;
     height: 350px;
@@ -179,7 +183,7 @@ h1 {
     top: -80px; 
     left: 100%;
     margin-top: -40px;
-    margin-left: 280px;
+    margin-left: 350px;
     transform: translateX(-100%); 
     width: 150px; 
     height:150px;

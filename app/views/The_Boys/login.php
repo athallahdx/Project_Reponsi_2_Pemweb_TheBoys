@@ -23,7 +23,7 @@
         <a href="<?= BASEURL ?>TheBoys/UserProfile" class="link-profile">
             <div class="profile-container">
                 <img src="<?= ASSETSIMG ?>The_Boys/home_profilnavbar.png" alt="Profile" class="profile-pic">
-                <span class="nickname">{Nickname}</span>
+                <span class="nickname">username</span>
             </div>
         </a>
     </nav>
@@ -45,7 +45,7 @@
             <!-- Konten Form -->
             <div class="registration-content">
                 <hr>
-                <form>
+                <form method="POST" action="<?= BASEURL ?>TheBoys/Login" id="loginForm">
                     <div class="input-container">
                         <label for="username">Email / Username</label>
                         <input type="text" id="username" name="username"class="username" required>
