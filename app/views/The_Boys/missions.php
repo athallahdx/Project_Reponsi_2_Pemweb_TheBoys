@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Seven</title>
+    <title>The Boys Missions</title>
     <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/missions_theboys.css?v=1.0">
 </head>
 <body data-assets-img="<?= ASSETSIMG ?>">

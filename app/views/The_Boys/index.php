@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Are "The Seven"</title>
+    <title>The Boys</title>
     <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/home_theboys.css">
      <style>
         

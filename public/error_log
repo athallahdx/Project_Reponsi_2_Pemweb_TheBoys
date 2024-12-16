@@ -1,0 +1,6 @@
+[16-Dec-2024 07:48:59 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function TheBoys::userpost(), 0 passed in /home/ifunsoed/theboysweb.ifunsoed23.xyz/app/core/App.php on line 36 and exactly 1 expected in /home/ifunsoed/theboysweb.ifunsoed23.xyz/app/controllers/TheBoys.php:328
+Stack trace:
+#0 /home/ifunsoed/theboysweb.ifunsoed23.xyz/app/core/App.php(36): TheBoys->userpost()
+#1 /home/ifunsoed/theboysweb.ifunsoed23.xyz/public/index.php(6): App->__construct()
+#2 {main}
+  thrown in /home/ifunsoed/theboysweb.ifunsoed23.xyz/app/controllers/TheBoys.php on line 328

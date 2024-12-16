@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Seven</title>
+    <title>User Profile</title>
     <link rel="stylesheet" href="<?= ASSETSCSS ?>The_Boys/DASHBOARD/userprofile_theboys.css">
 </head>
 <body data-assets-img="<?= ASSETSIMG ?>">

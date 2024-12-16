@@ -1,8 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+    padding: 0; 
     color: #ffffff;
 }
 
@@ -135,21 +134,6 @@ body {
 }
 
 /* Sidebar kiri */
-.sidebar {
-    flex: center;
-    text-align: left;
-    background-color: #DE6666;
-    height: 260px;
-    width: 750px; 
-    display: flex; 
-    flex-direction: row; 
-    align-items: center;
-    justify-content: space-around; 
-    border-radius: 20px;
-    padding: 10px;
-    margin-left: 80px;
-
-}
 
 .sidebar {
     text-align: left;

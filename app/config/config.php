@@ -1,14 +1,14 @@
 <?php
 
-    define("ASSETSURL", "http://localhost/Responsi_2_TheBoys/public/");
-    define("ASSETSCSS", "http://localhost/Responsi_2_TheBoys/public/css/");
-    define("ASSETSJS", "http://localhost/Responsi_2_TheBoys/public/js/");
-    define("ASSETSIMG", "http://localhost/Responsi_2_TheBoys/public/img/");
-    define("BASEURL", "http://localhost/Responsi_2_TheBoys/public/");
-    define("VIEWSURL", "http://localhost/Responsi_2_TheBoys/app/views/");
+    define("ASSETSURL", "https://theboysweb.ifunsoed23.xyz/");
+    define("ASSETSCSS", "https://theboysweb.ifunsoed23.xyz/css/");
+    define("ASSETSJS", "https://theboysweb.ifunsoed23.xyz/js/");
+    define("ASSETSIMG", "https://theboysweb.ifunsoed23.xyz/img/");
+    define("UPLOADS", "https://theboysweb.ifunsoed23.xyz/uploads/");
+    define("BASEURL", "https://theboysweb.ifunsoed23.xyz/");
+    define("VIEWSURL", "https://theboysweb.ifunsoed23.xyz/app/views/");
     define("DB_HOST", "localhost");
-    define("DB_USER", "root");
-    define("DB_PASS", "");
-    define("DB_NAME", "theboysweb");
-    define("UPLOADS", "http://localhost/Responsi_2_TheBoys/public/uploads/");
-    define("FORCED_REDIRECT", "http://localhost/Responsi_2_TheBoys/app/views/The_Boys/");
+    define("DB_USER", "ifunsoed_boys");
+    define("DB_PASS", "3J5R4YQVeTreynC");
+    define("DB_NAME", "ifunsoed_theboysweb");
+    define("FORCED_REDIRECT", "https://theboysweb.ifunsoed23.xyz/app/views/The_Boys/");

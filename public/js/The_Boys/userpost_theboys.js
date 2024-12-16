@@ -1,8 +1,11 @@
 const bodyElement = document.getElementsByTagName('body')[0];
 const assetsImg = bodyElement.getAttribute('data-assets-img');
-console.log(assetsImg);
 
+// Set the background image for the body
 bodyElement.style.backgroundImage = `url('${assetsImg}The_Boys/home_background.png')`;
+bodyElement.style.backgroundSize = 'cover';
+bodyElement.style.backgroundRepeat = 'no-repeat';
+bodyElement.style.backgroundPosition = 'center';
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');

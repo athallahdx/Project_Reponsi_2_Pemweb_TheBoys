@@ -35,7 +35,7 @@ class TheBoys extends Controller {
             $errors[] = 'Passwords do not match.';
         }
 
-        $userModel = $this->model('The_Boys/User_model');
+        $userModel = $this->model('The_Boys/user_model');
         if ($userModel->checkEmailExists($data['email'])) {
             $errors[] = 'Email is already taken.';
         }
@@ -49,7 +49,7 @@ class TheBoys extends Controller {
 
     public function register() {
         if (Session::exists('user_id')) {
-            header('Location:' . BASEURL . 'TheBoys/Dashboard');
+            header('Location:' . BASEURL . 'TheBoys/dashboard');
             exit();
         }
 
@@ -68,11 +68,11 @@ class TheBoys extends Controller {
             if (empty($errors)) {
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                $userModel = $this->model('The_Boys/User_model');
+                $userModel = $this->model('The_Boys/user_model');
 
                 if ($userModel->registerUser($data)) {
-                    ob_flush();
-                    ob_clean();
+                    
+                    
                     header('Location: ' . BASEURL . 'TheBoys/Login');
                     exit();
                 } else {
@@ -104,7 +104,7 @@ class TheBoys extends Controller {
             }
 
             if (empty($data['errors'])) {
-                $userModel = $this->model('The_Boys/User_model');
+                $userModel = $this->model('The_Boys/user_model');
                 $user = $userModel->getUserByUsername($data['username']);
 
                 if ($user) {
@@ -137,9 +137,60 @@ class TheBoys extends Controller {
             header('Location:' . BASEURL . 'TheBoys/login');
             exit();
         }
+        
 
         $data['user'] = $this->loadSessionData();
-        $this->view('The_Boys/community', $data);
+        $data['posts'] = $this->model('The_Boys/post_model')->getAllPosts();
+        $data['user_model'] = $this->model('The_Boys/user_model');
+        $data['userprofile'] = $this->model('The_Boys/userprofile_model');
+
+        $this->view('The_Boys/communitypost', $data);
+    }
+
+    public function addPost() {
+        if (!Session::exists('user_id')) {
+            header('Location:' . BASEURL . 'TheBoys/login');
+            exit();
+        }
+    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = [
+                'user_creator_id' => $_SESSION['user_id'],
+                'content' => htmlspecialchars(trim($_POST['content'])) // Sanitize input
+            ];
+    
+            if(isset($_FILES['postimage']) && $_FILES['postimage']['error'] === UPLOAD_ERR_OK) {
+                $file = $_FILES['postimage'];
+                try {
+                    $this->model('The_Boys/post_model')->addPostWithImage($data, $file);
+                    header('Location: ' . BASEURL . 'TheBoys/community');
+                    exit();
+                } catch (\Exception $e) {
+                    error_log("Error in addPostWithImage: " . $e->getMessage());
+                    echo "An error occurred while processing your post. Please try again.";
+                }
+            } else {
+                try {
+                    $this->model('The_Boys/post_model')->addPostWithoutImage($data);
+                    header('Location: ' . BASEURL . 'TheBoys/community');
+                    exit();
+                } catch (\Exception $e) {
+                    error_log("Error in addPostWithoutImage: " . $e->getMessage());
+                    echo "An error occurred while processing your post. Please try again.";
+                }
+            }
+        }
+    }
+
+    public function userpost() {
+        if (!Session::exists('user_id')) {
+            header('Location: ' . BASEURL . 'TheBoys/login');
+            exit();
+        }
+
+        $data['user'] = $this->loadSessionData();
+        $data['post'] = $this->model('The_Boys/post_model')->getPostByUserId($data['user']['user_id']);
+        $this->view('The_Boys/userpost', $data);
     }
 
     public function dashboard() {
@@ -159,7 +210,7 @@ class TheBoys extends Controller {
         }
 
         $data['user'] = $this->loadSessionData();
-        $data['members'] = $this->model('The_Boys/Member_model')->getAllMembers();    
+        $data['members'] = $this->model('The_Boys/member_model')->getAllMembers();    
         $this->view('The_Boys/teammembers', $data);
     }
 
@@ -170,7 +221,7 @@ class TheBoys extends Controller {
         }
 
         $data['user'] = $this->loadSessionData();
-        $data['mission'] = $this->model('The_Boys/Mission_model')->getAllMissions();
+        $data['mission'] = $this->model('The_Boys/mission_model')->getAllMissions();
         $this->view('The_Boys/missions', $data);
     }
 
@@ -192,7 +243,7 @@ class TheBoys extends Controller {
             
             // var_dump($data);
             // Call the model to update the mission
-            $this->model('The_Boys/Mission_model')->updateMission($data);
+            $this->model('The_Boys/mission_model')->updateMission($data);
             header('Location: ' . BASEURL . 'TheBoys/missions');
         }
     }
@@ -209,7 +260,7 @@ class TheBoys extends Controller {
             $userId = $_SESSION['user_id'];
     
             // Verify if the participant already exists for the given mission
-            $participantExists = $this->model('The_Boys/Mission_model')->isParticipantExists($missionId, $userId);
+            $participantExists = $this->model('The_Boys/mission_model')->isParticipantExists($missionId, $userId);
     
             if ($participantExists) {
                 // Redirect back with an error message (optional)
@@ -219,11 +270,10 @@ class TheBoys extends Controller {
             }
     
             // Call the model to join the mission
-            $this->model('The_Boys/Mission_model')->addParticipant($missionId, $userId);
+            $this->model('The_Boys/mission_model')->addParticipant($missionId, $userId);
             header('Location: ' . BASEURL . 'TheBoys/missions');
         }
     }
-    
 
     public function deleteMission() {
         if (!Session::exists('user_id')) {
@@ -236,7 +286,7 @@ class TheBoys extends Controller {
             $missionId = $_POST['mission_id'];
     
             // Call the model to delete the mission
-            $this->model('The_Boys/Mission_model')->deleteMission($missionId);
+            $this->model('The_Boys/mission_model')->deleteMission($missionId);
             header('Location: ' . BASEURL . 'TheBoys/missions');
         }
     }
@@ -258,7 +308,7 @@ class TheBoys extends Controller {
             
             var_dump($data);
             // Call the model to add the mission
-            $this->model('The_Boys/Mission_model')->addMission($data);
+            $this->model('The_Boys/mission_model')->addMission($data);
             header('Location: ' . BASEURL . 'TheBoys/missions');
         }
     }
@@ -270,7 +320,7 @@ class TheBoys extends Controller {
         }
         $data=[];
         $data['user'] = $this->loadSessionData();
-        $data['userprofile'] = $this->model('The_Boys/Userprofile_model')->getUserProfileById($data['user']['user_id']);
+        $data['userprofile'] = $this->model('The_Boys/userprofile_model')->getUserProfileById($data['user']['user_id']);
 
         $this->view('The_Boys/userprofile', $data);
     }
@@ -282,17 +332,8 @@ class TheBoys extends Controller {
         }
 
         $data['user'] = $this->loadSessionData();
-        $data['userprofile'] = $this->model('The_Boys/Userprofile_model')->getUserProfileById($data['user']['user_id']);
+        $data['userprofile'] = $this->model('The_Boys/userprofile_model')->getUserProfileById($data['user']['user_id']);
         $this->view('The_Boys/editprofile',$data);
-    }
-
-    public function userpost($post_id) {
-        if (!Session::exists('user_id')) {
-            header('Location: ' . BASEURL . 'TheBoys/login');
-            exit();
-        }
-
-        $this->view('The_Boys/userpost', $post_id);
     }
 
     public function memberdetail($member_id) {
@@ -302,7 +343,7 @@ class TheBoys extends Controller {
         }
 
         $data['user'] = $this->loadSessionData();
-        $data['member'] = $this->model('The_Boys/Member_model')->getMemberById($member_id);
+        $data['member'] = $this->model('The_Boys/member_model')->getMemberById($member_id);
         $this->view('The_Boys/memberdetail', $data);
     }
 
@@ -327,10 +368,10 @@ class TheBoys extends Controller {
                 // If there is a file, update with the image
                 $file = $_FILES['avatar'];
                 try {
-                    $this->model('The_Boys/Userprofile_model')->updateProfileWithImage($userId, $file, $username, $fullname, $age, $ethnicity, $profileBio);
+                    $this->model('The_Boys/userprofile_model')->updateProfileWithImage($userId, $file, $username, $fullname, $age, $ethnicity, $profileBio);
                     
                     // Update session data with the new user information
-                    $updatedUser = $this->model('The_Boys/User_model')->getUserById($userId);
+                    $updatedUser = $this->model('The_Boys/user_model')->getUserById($userId);
     
                     $_SESSION = [
                         'user_id' => $updatedUser['user_id'],
@@ -340,8 +381,8 @@ class TheBoys extends Controller {
                         'role' => $updatedUser['role'],
                     ];
     
-                    ob_flush();
-                    ob_clean();
+                    
+                    
                     header('Location: ' . BASEURL . 'TheBoys/UserProfile');
                     exit();
                 } catch (\Exception $e) {
@@ -350,10 +391,10 @@ class TheBoys extends Controller {
             } else {
                 // If no image is uploaded, update only the profile details
                 try {
-                    $this->model('The_Boys/Userprofile_model')->updateUserProfileWithoutImage($userId, $username, $fullname, $age, $ethnicity, $profileBio);
+                    $this->model('The_Boys/userprofile_model')->updateUserProfileWithoutImage($userId, $username, $fullname, $age, $ethnicity, $profileBio);
                     
                     // Update session data with the new user information
-                    $updatedUser = $this->model('The_Boys/User_model')->getUserById($userId);
+                    $updatedUser = $this->model('The_Boys/user_model')->getUserById($userId);
     
                     $_SESSION = [
                         'user_id' => $updatedUser['user_id'],
@@ -363,8 +404,8 @@ class TheBoys extends Controller {
                         'role' => $updatedUser['role'],
                     ];
     
-                    ob_flush();
-                    ob_clean();
+                    
+                    
                     header('Location: ' . BASEURL . 'TheBoys/UserProfile');
                     exit();
                 } catch (\Exception $e) {

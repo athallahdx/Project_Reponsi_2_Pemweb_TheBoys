@@ -1,7 +1,7 @@
 const bodyElement = document.getElementsByTagName('body')[0];
 const assetsImg = bodyElement.getAttribute('data-assets-img');
-console.log(assetsImg);
 
+// Set the background image
 bodyElement.style.backgroundImage = `url('${assetsImg}The_Boys/home_background.png')`;
 
 function toggleMenu() {
@@ -27,35 +27,33 @@ function resetMenu() {
 }
 
 
+function toggleComments(button) {
+    var postId = button.getAttribute('data-post-id');
+    
+    var hiddenComments = document.querySelectorAll(`#post${postId} .comment-section[style="display: none;"]`);
+    
+    if (hiddenComments.length > 0) {
+        hiddenComments.forEach(function(comment) {
+            comment.style.display = 'block'; 
+        });
 
+        button.textContent = 'Sembunyikan';  
+    } else {
+        var allComments = document.querySelectorAll(`#post${postId} .comment-section`);
+        
+        allComments.forEach(function(comment) {
+            if (comment.style.display === 'block') {
+                comment.style.display = 'none';  
+            }
+        });
 
-document.getElementById("post-button").addEventListener("click", function () {
-    const postInput = document.getElementById("post-input");
-    const postsContainer = document.getElementById("posts-container");
+        button.textContent = 'Selengkapnya'; 
+    }
+}
 
-    // Ambil teks dari input
-    const postText = postInput.value.trim();
-    if (postText === "") return; // Jangan posting jika kosong
+const fileInput = document.getElementById('file-input');
+const imageTrigger = document.getElementById('image-trigger');
 
-    // Buat elemen waktu sekarang
-    const currentTime = new Date();
-    const timeString = `Just now`;
-
-    // Buat elemen postingan baru
-    const newPost = document.createElement("div");
-    newPost.classList.add("post");
-    newPost.innerHTML = `
-        <img src="../../ASSET/THESEVEN/COMMUNITY/community2_profile.png" alt="Profile" class="profile-pic-2">
-        <div class="post-content">
-            <span class="username">Your Name</span>
-            <span class="post-time">${timeString}</span></br></br>
-            <p>${postText}</p>
-        </div>
-    `;
-
-    // Tambahkan postingan baru ke container
-    postsContainer.prepend(newPost);
-
-    // Kosongkan input
-    postInput.value = "";
+imageTrigger.addEventListener('click', function () {
+    fileInput.click();
 });
